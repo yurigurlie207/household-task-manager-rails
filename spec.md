@@ -1,8 +1,8 @@
-Requirements for Ruby on Rails Portfolio Project
+REQUIREMENTS FOR RUBY ON RAILS PROJECT
 
 - [ ] Use the Ruby on Rails framework.
 
-Your models must:
+YOU MODELS MUST INCLUDE
 
 - [ ] Include at least one has_many, at least one belongs_to, and at least two has_many :through relationships
 
