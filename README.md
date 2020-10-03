@@ -11,6 +11,7 @@ I took a long hiatus after getting through the materials on Rails (around 1.5 mo
 - created basic text files: liscense, readme and spec
 - made the decision to reproduce my Sinatra project web app since it meets the project scope
 - watch review videos of Rails module (TODOLIST videos)
+    - generate app
 
 
 WEB APP DESCRIPTION
