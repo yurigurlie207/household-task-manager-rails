@@ -12,6 +12,5 @@ I took a long hiatus after getting through the materials on Rails (around 1.5 mo
 
 
 
-
 WEB APP DESCRIPTION
 
