@@ -37,7 +37,8 @@ Your application must be, within reason, a DRY (Do-Not-Repeat-Yourself) rails ap
 - [ ] Follow patterns in the Rails Style Guide and the Ruby Style Guide.
 
 
-Instructions
+
+INSTRUCTIONS
 - [ ] Create a new repository on GitHub for your Rails application.
 - [ ] When you create the Rails app for your assessment, add the spec.md file from this repo to the root directory of the project, commit it to Git and push it up to GitHub. You will use this file as a personal checklist of requirements as you complete the project.
 Build your application. Make sure to commit early and commit often. Commit messages should be meaningful (clearly describe what you're doing in the commit) and accurate (there should be nothing in the commit that doesn't match the description in the commit message). Good rule of thumb is to commit every 3-7 mins of actual coding time. Most of your commits should have under 15 lines of code and a 2 line commit is perfectly acceptable. This is important and you'll be graded on this.
