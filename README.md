@@ -11,6 +11,10 @@ I took a long hiatus after getting through the materials on Rails (around 1.5 mo
 - made the decision to make the same web app as my Sinatra project since it meets the project scope
 
 
+10/7/20
+- added in raw code from models/controllers/views/migrations for user from Sinatra project
+- added in sessions/cookies/omniauth code from rails labs
+(Still need to be cleaned up,tailored, debugged, and refactored)
 
 WEB APP DESCRIPTION
 
