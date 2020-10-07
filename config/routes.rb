@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   get '/users/:id/edit', to: 'users#edit', as: 'edit_user'
 
   get '/signin', to: 'session#new', as: 'signin'
-  post '/session', to: 'session#create', as: 'session'
-  delete '/session/', to: 'session#destroy'
+  post '/login' => 'sessions#create'
+  post '/logout' => 'sessions#destroy'
 
   # get '/login' => 'sessions#new'
   # post '/login' => 'sessions#create'
