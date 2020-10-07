@@ -1,0 +1,24 @@
+<h1>Hello, <%= @user.username %></h1>
+
+
+<div>First Name: <%= @user.firstname %> </div>
+<div>Last Name: <%= @user.lastname %></div>
+<div>Email: <%= @user.email %></div>
+<div>Role: <%= @user.role %></div>
+<div>DOB: <%= @user.birthdate %></div>
+
+
+<br><br>
+<div>
+  <% can_edit = 0 %>
+  <% if session[:user_id] == @user.id %>
+    <% can_edit = 1 %>
+  <% end %>
+
+   <% if can_edit == 1 %>
+   <%= @form_open = '<form style="display:inline;" action="' + "../user/#{@user.id}/edit" + '">' %>
+     <button type="submit">Update Profile</button></form><br><br>
+   <% end %>
+</div>
+
+<div><a href="../user/userhome">User Home</a> | <a href= "../user/logout">Log Out</a></div>

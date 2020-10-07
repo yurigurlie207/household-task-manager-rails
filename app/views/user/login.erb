@@ -1,0 +1,20 @@
+<div style="color:red;">
+<% flash.keys.each do |type| %>
+    <%= flash[type] %>
+<% end %>
+  </div>
+
+<div>
+<h1>Login to your account:</h1>
+<form method="post" action="/login">
+  <input type="text" name="user[username]" placeholder="Username:">
+  <input type="text" name="user[password]" placeholder="Password:">
+
+  <input type="submit" value="Log In">
+</form>
+</div>
+
+<br><br>
+<div>
+<a href="..">Home</a> | <a href="../user/signup">Sign Up</a>
+</div>

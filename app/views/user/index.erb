@@ -1,0 +1,15 @@
+
+<!-- This is mostly used for debugging -->
+<ul>
+<% User.all.each do |user| %>
+  <li><%= @add_link = '<a href="' + "../user/#{user.id}" + '">' + "#{user.id}" + ": " +"#{user.username}" + '</a>' %><br>
+</li>
+<% end %>
+</ul>
+
+
+<ul>
+<% UserTask.all.each do |usertask| %>
+  <li>User id: <%= usertask.user_id %>, Task id: <%= Subtask.find_by_id(usertask.subtask_id).task_id %>, Subtask id: <%= usertask.subtask_id%></li>
+<% end %>
+</ul>
