@@ -1,3 +1,3 @@
 class User < ApplicationRecord
-    resources :posts, only: [:index, :new]
+   has_secure_password
 end
