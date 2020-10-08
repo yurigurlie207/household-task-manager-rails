@@ -28,7 +28,7 @@ class SessionsController < ApplicationController
 
   # Ye olde redirect
   # redirect_to root_path
-  redirect_to controller: 'user', action: 'home'
+  redirect_to controller: 'user', action: 'userhome'
   end
 
   def destroy

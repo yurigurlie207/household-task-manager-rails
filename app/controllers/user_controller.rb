@@ -37,22 +37,6 @@ class UserController < ApplicationController
   #   end
   # end
 
-  # get '/user/login' do
-  #   if !logged_in?
-  #     erb :'/user/login'
-  #   else
-  #     redirect to '/user/userhome'
-  #   end
-  # end
-
-  # # get '/user/userhome' do
-  # #   if !logged_in?
-  # #     erb :'/user/login'
-  # #   else
-  # #     @user = current_user
-  # #     erb :'/user/userhome'
-  # #   end
-  # # end
 
   # post '/signup' do
   #   usernames = User.all.collect { |user| user.username }
