@@ -18,6 +18,7 @@ I took a long hiatus after getting through the materials on Rails (around 1.5 mo
 (Still need to be cleaned up,tailored, debugged, and refactored)
 
 10/8/20
+The word I'm doing today integrates a bit reorganizing code, but as well as reviewing some of the topic. Due to this, it looks a bit less like live coding, and more like learning through breaking up some code chunks, which may mean I'm putting things together out of order, as I gather bits of pieces of information I need to put together the main goal for today: get the user model, and authentication set up along with the web app parts needed to walk through the entire user login/authenticaion process.
 
 WEB APP DESCRIPTION
 
