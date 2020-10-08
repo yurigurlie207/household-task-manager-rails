@@ -1,6 +1,9 @@
 class UserController < ApplicationController
   before_action :require_login
+  skip_before_action :require_login, only: [:index :new]
 
+    def index
+    end
 
     def userhome
     end
@@ -15,16 +18,8 @@ class UserController < ApplicationController
       redirect_to controller: 'welcome', action: 'home'
     end
   
-    private
-  
-    def user_params
-      params.require(:user).permit(:name, :password, :password_confirmation)
-    end
 
 
-  get '/user' do
-    erb :'/user/index'
-  end
 
   get '/user/signup' do
     if !logged_in?
@@ -127,6 +122,10 @@ class UserController < ApplicationController
   end
 
   private
+  
+  def user_params
+    params.require(:user).permit(:name, :password, :password_confirmation)
+  end
  
   def require_login
     return head(:forbidden) unless session.include? :user_id
