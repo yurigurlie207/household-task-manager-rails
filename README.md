@@ -20,5 +20,8 @@ I took a long hiatus after getting through the materials on Rails (around 1.5 mo
 10/8/20
 The word I'm doing today integrates a bit reorganizing code, but as well as reviewing some of the topic. Due to this, it looks a bit less like live coding, and more like learning through breaking up some code chunks, which may mean I'm putting things together out of order, as I gather bits of pieces of information I need to put together the main goal for today: get the user model, and authentication set up along with the web app parts needed to walk through the entire user login/authenticaion process.This may also mean I go off in some tangents as I read through some of the course work again.
 
+So far, the only thing I've confirmed is up and running is my web app is now up on the rails server. I have not run any other code. I think I will do this once I have the code merged and updated to all the rails syntax for the process flow required for user creation and login.
+
+
 WEB APP DESCRIPTION
 
