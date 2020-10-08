@@ -1,4 +1,7 @@
 class UserController < ApplicationController
+  before_action :require_login
+
+
     def userhome
     end
 
@@ -121,5 +124,11 @@ class UserController < ApplicationController
         @user = User.find_by_id(params[:id])
         erb :'/user/profile'
     end
+  end
+
+  private
+ 
+  def require_login
+    return head(:forbidden) unless session.include? :user_id
   end
 end
