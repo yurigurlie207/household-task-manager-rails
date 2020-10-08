@@ -14,7 +14,10 @@ I took a long hiatus after getting through the materials on Rails (around 1.5 mo
 10/7/20
 - added in raw code from models/controllers/views/migrations for user from Sinatra project
 - added in sessions/cookies/omniauth code from rails labs
+
 (Still need to be cleaned up,tailored, debugged, and refactored)
+
+10/8/20
 
 WEB APP DESCRIPTION
 

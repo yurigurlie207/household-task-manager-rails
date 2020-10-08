@@ -1,12 +1,5 @@
 class ApplicationController < ActionController::Base
-    configure do
-        set :public_folder, 'public'
-        set :views, 'app/views'
-        enable :sessions
-        register Sinatra::Flash
-        set :session_secret, "task_secret"
-      end
-    
+
       get '/' do
         erb :index
       end
