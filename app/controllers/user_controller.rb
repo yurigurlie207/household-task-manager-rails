@@ -1,4 +1,6 @@
 class UserController < ApplicationController
+    def userhome
+    end
 
     def new
     end
@@ -37,14 +39,14 @@ class UserController < ApplicationController
     end
   end
 
-  get '/user/userhome' do
-    if !logged_in?
-      erb :'/user/login'
-    else
-      @user = current_user
-      erb :'/user/userhome'
-    end
-  end
+  # get '/user/userhome' do
+  #   if !logged_in?
+  #     erb :'/user/login'
+  #   else
+  #     @user = current_user
+  #     erb :'/user/userhome'
+  #   end
+  # end
 
   post '/signup' do
     usernames = User.all.collect { |user| user.username }
