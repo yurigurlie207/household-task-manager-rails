@@ -4,11 +4,11 @@ Rails.application.routes.draw do
 
   root 'static#home'
 
-  get '/user/new', to: 'user#new', as: 'new_user'
-  get '/user', to:'user#index', as: 'users'
-  post '/user', to:'user#create'
-  get '/user/:id', to: 'user#show', as: 'user'
-  get '/user/:id/edit', to: 'user#edit', as: 'edit_user'
+  get '/users/new', to: 'user#new', as: 'new_user'
+  get '/users', to:'user#index', as: 'users'
+  post '/users', to:'user#create'
+  get '/users/:id', to: 'user#show', as: 'user'
+  get '/users/:id/edit', to: 'user#edit', as: 'edit_user'
 
   get '/signin', to: 'session#new', as: 'signin'
   post '/login' => 'sessions#create'
