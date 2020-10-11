@@ -22,6 +22,13 @@ The word I'm doing today integrates a bit reorganizing code, but as well as revi
 
 So far, the only thing I've confirmed is up and running is my web app is now up on the rails server. I have not run any other code. I think I will do this once I have the code merged and updated to all the rails syntax for the process flow required for user creation and login.
 
+10/11/20
+It's been confusing, trying to relearn everything, while putting the pieces together needed for my app. 
+Spending some time on the options of signing up, logging in, logging in and/or signing up through GitHub auth. This looks a bit messy, the way I'm approaching constructing my code, but writing my code here and there is a sign of me filling in some gaps of knowledge, albiet it's looking like poor coding practice. 
+
+I still need to review this so I'm using my syntax efficiently:
+https://medium.com/@kerenlerner/render-and-redirect-which-to-use-106ff653ee9a
+
 
 WEB APP DESCRIPTION
 
