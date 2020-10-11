@@ -4,19 +4,16 @@ Rails.application.routes.draw do
 
   root 'static#home'
 
-  get '/users/new', to: 'user#new', as: 'new_user'
   get '/users', to:'user#index', as: 'users'
+  get '/users/new', to: 'user#new', as: 'new_user'
   post '/users', to:'user#create'
   get '/users/:id', to: 'user#show', as: 'user'
   get '/users/:id/edit', to: 'user#edit', as: 'edit_user'
 
-  get '/signin', to: 'session#new', as: 'signin'
+  get '/login', to: 'session#new', as: 'login'
   post '/login' => 'sessions#create'
   post '/logout' => 'sessions#destroy'
 
-  # get '/login' => 'sessions#new'
-  # post '/login' => 'sessions#create'
-  # post '/logout' => 'sessions#destroy'
 
   match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
 
