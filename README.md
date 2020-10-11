@@ -29,6 +29,7 @@ Spending some time on the options of signing up, logging in, logging in and/or s
 I still need to review this so I'm using my syntax efficiently:
 https://medium.com/@kerenlerner/render-and-redirect-which-to-use-106ff653ee9a
 
+Completed the code logic in the sessions create route method. The next time I get back to this will be to start debugging the entire user login/signup story as I have gathered all the code, and roughly put it together.
 
 WEB APP DESCRIPTION
 
