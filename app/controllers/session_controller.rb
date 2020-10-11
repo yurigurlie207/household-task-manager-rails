@@ -5,32 +5,27 @@ class SessionsController < ApplicationController
   end
 
   def create
-    
-  # After entering a name and email value in the /auth/developer
-  # path and submitting the form, you will see a pretty-print of
-  # the authentication data object that comes from the "developer"
-  # strategy. In production, we'll swap this strategy for something
-  # like 'github' or 'facebook' or some other authentication broker
-  pp request.env['omniauth.auth']
-
-  # We're going to save the authentication information in the session
-  # for demonstration purposes. We want to keep this data somewhere so that,
-  # after redirect, we have access to the returned data
-  session[:name] = request.env['omniauth.auth']['info']['name']
-  session[:omniauth_data] = request.env['omniauth.auth']
-  redirect_to controller: 'user', action: 'userhome'
-
-  user = User.find_by(name: params[:user][:name])
-  user = user.try(:authenticate, params[:user][:password])
-  return redirect_to(controller: 'sessions', action: 'new') unless user
-
-    session[:user_id] = user.id
-    @user = user
-
-    return redirect_to(controller: 'sessions', action: 'new') if !params[:name] || params[:name].empty?
-    session[:name] = params[:name]
-    redirect_to controller: 'application', action: 'hello'
  
+    if request.env['omniauth.auth']
+      # pp request.env['omniauth.auth']
+      session[:name] = request.env['omniauth.auth']['info']['name']
+      session[:omniauth_data] = request.env['omniauth.auth']
+
+      user = User.find_by(name: session[:name])
+      return redirect_to(controller: 'users', action: 'create') unless user
+      session[:user_id] = user.id
+      @user = user
+    else
+      return redirect_to(controller: 'sessions', action: 'new') if !params[:name] || params[:name].empty?
+      session[:name] = params[:name]
+      user = User.find_by(name: params[:user][:name])
+      user = user.try(:authenticate, params[:user][:password])
+      session[:user_id] = user.id
+      @user = user
+      redirect_to controller: 'users', action: 'userhome'
+    end
+
+  
   end
 
   def destroy
