@@ -18,6 +18,7 @@ class SessionsController < ApplicationController
   # after redirect, we have access to the returned data
   session[:name] = request.env['omniauth.auth']['info']['name']
   session[:omniauth_data] = request.env['omniauth.auth']
+  redirect_to controller: 'user', action: 'userhome'
 
   user = User.find_by(name: params[:user][:name])
   user = user.try(:authenticate, params[:user][:password])
@@ -26,9 +27,10 @@ class SessionsController < ApplicationController
     session[:user_id] = user.id
     @user = user
 
-  # Ye olde redirect
-  # redirect_to root_path
-  redirect_to controller: 'user', action: 'userhome'
+    return redirect_to(controller: 'sessions', action: 'new') if !params[:name] || params[:name].empty?
+    session[:name] = params[:name]
+    redirect_to controller: 'application', action: 'hello'
+ 
   end
 
   def destroy

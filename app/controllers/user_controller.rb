@@ -16,6 +16,9 @@ class UserController < ApplicationController
     end
 
     def userhome
+      if session[:user_id]
+        @user = User.find(session[:user_id])
+      end
     end
   
     private

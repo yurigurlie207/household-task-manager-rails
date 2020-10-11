@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :current_user
 
+    def index
+    end
     
   # def can_edit?(subtasks)
   #   subtasks.each do |subtask|
