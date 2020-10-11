@@ -2,6 +2,7 @@ class UserController < ApplicationController
   before_action :require_login
   skip_before_action :require_login, only: [:index :new]
 
+    #this route is for development/testing purposes
     def index
     end
 
