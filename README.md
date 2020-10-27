@@ -35,3 +35,4 @@ Completed the code logic in the sessions create route method. The next time I ge
 It's never a good idea to separate your personal life too much from your work life. Otherwise, how will you know how to strike a balance? So after another stint of what I'd like to call productive (some mandatory , and some objectively optional) procrastination from my project, I've cleared up the needed mental clutter to start back again. I readily thank the structure of the FS program for helping me mindfully make up small tasks to tackle so that it's not as difficult to return to my project after a break.
 
 Today's goals: try to get the welcome template to render with the signin/signup form options 
+Ran user model migration
