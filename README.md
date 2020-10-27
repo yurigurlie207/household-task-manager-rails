@@ -31,5 +31,6 @@ https://medium.com/@kerenlerner/render-and-redirect-which-to-use-106ff653ee9a
 
 Completed the code logic in the sessions create route method. The next time I get back to this will be to start debugging the entire user login/signup story as I have gathered all the code, and roughly put it together.
 
-WEB APP DESCRIPTION
-
+10/27/20
+It's never a good idea to separate your personal life too much from your work life. Otherwise, how will you know how to strike a balance? So after another stint of what I'd like to call productive (some mandatory , and some objectively optional) procrastination from my project, I've cleared up the needed mental clutter to start back again. I readily thank the structure of the FS program for helping me mindfully make up small tasks to tackle so that it's not as difficult to return to my project after a break.
+ 
