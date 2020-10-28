@@ -1,4 +1,4 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
   before_action :require_login
   skip_before_action :require_login, only: [:index :new]
 
@@ -8,7 +8,7 @@ class UserController < ApplicationController
 
     def new
     end
-  
+   
     def create
       @user = User.create(user_params)
       return redirect_to controller: 'users', action: 'new' unless @user.save

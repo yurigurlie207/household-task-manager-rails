@@ -3,19 +3,21 @@ Rails.application.routes.draw do
   # resources :users, only: [:new, :create]
 
   root 'static#home'
+  get '/auth/developer/callback', to: 'sessions#create'
+  # match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
 
-  get '/users', to:'user#index', as: 'users'
-  get '/users/new', to: 'user#new', as: 'new_user'
-  post '/users', to:'user#create'
-  get '/users/:id', to: 'user#show', as: 'user'
-  get '/users/:id/edit', to: 'user#edit', as: 'edit_user'
+  get '/users', to:'users#index', as: 'users'
+  get '/users/new', to: 'users#new', as: 'new_user'
+  post '/users', to:'users#create'
+  get '/users/:id', to: 'users#show', as: 'user'
+  get '/users/:id/edit', to: 'users#edit', as: 'edit_user'
 
-  get '/login', to: 'session#new', as: 'login'
+  get '/login', to: 'sessions#new', as: 'login'
   post '/login' => 'sessions#create'
   post '/logout' => 'sessions#destroy'
 
 
-  match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
+  
 
 end
 

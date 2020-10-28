@@ -11,21 +11,21 @@ class SessionsController < ApplicationController
       session[:name] = request.env['omniauth.auth']['info']['name']
       session[:omniauth_data] = request.env['omniauth.auth']
 
-      user = User.find_by(name: session[:name])
+      user = User.find_by(username: session[:name])
       return redirect_to(controller: 'users', action: 'create') unless user
       session[:user_id] = user.id
       @user = user
-    else
-      return redirect_to(controller: 'sessions', action: 'new') if !params[:name] || params[:name].empty?
-      session[:name] = params[:name]
-      user = User.find_by(name: params[:user][:name])
-      user = user.try(:authenticate, params[:user][:password])
-      session[:user_id] = user.id
-      @user = user
-      redirect_to controller: 'users', action: 'userhome'
+    # else
+    #   return redirect_to(controller: 'sessions', action: 'new') if !params[:name] || params[:name].empty?
+    #   session[:name] = params[:name]
+    #   user = User.find_by(name: params[:user][:name])
+    #   user = user.try(:authenticate, params[:user][:password])
+    #   session[:user_id] = user.id
+    #   @user = user
+    #   redirect_to controller: 'users', action: 'userhome'
     end
 
-  
+     redirect_to controller: 'users', action: 'userhome'
   end
 
   def destroy
