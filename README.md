@@ -36,3 +36,5 @@ It's never a good idea to separate your personal life too much from your work li
 
 Today's goals: try to get the welcome template to render with the signin/signup form options 
 Ran user model migration
+
+10/28/20
