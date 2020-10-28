@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   root 'static#home'
   match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
 
-  # match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
 
   get '/users', to:'users#index', as: 'users'
   get '/users/new', to: 'users#new', as: 'new_user'

@@ -38,3 +38,4 @@ Today's goals: try to get the welcome template to render with the signin/signup 
 Ran user model migration
 
 10/28/20
+Fixed some routes and templates. Got the Developer Authentication screen to load and submit. Next steps to include checking to see if the data saved, and to get the github authentication to work as well before moving onto user sign up with forms.
