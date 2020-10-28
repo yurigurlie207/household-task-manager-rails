@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   # resources :users, only: [:new, :create]
 
   root 'static#home'
-  get '/auth/developer/callback', to: 'sessions#create'
+  match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
+
   # match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
 
   get '/users', to:'users#index', as: 'users'
