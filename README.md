@@ -18,7 +18,7 @@ I took a long hiatus after getting through the materials on Rails (around 1.5 mo
 (Still need to be cleaned up,tailored, debugged, and refactored)
 
 10/8/20
-The word I'm doing today integrates a bit reorganizing code, but as well as reviewing some of the topic. Due to this, it looks a bit less like live coding, and more like learning through breaking up some code chunks, which may mean I'm putting things together out of order, as I gather bits of pieces of information I need to put together the main goal for today: get the user model, and authentication set up along with the web app parts needed to walk through the entire user login/authenticaion process.This may also mean I go off in some tangents as I read through some of the course work again.
+The work I'm doing today integrates a bit reorganizing code, but as well as reviewing some of the topic. Due to this, it looks a bit less like live coding, and more like learning through breaking up some code chunks, which may mean I'm putting things together out of order, as I gather bits of pieces of information I need to put together the main goal for today: get the user model, and authentication set up along with the web app parts needed to walk through the entire user login/authenticaion process.This may also mean I go off in some tangents as I read through some of the course work again.
 
 So far, the only thing I've confirmed is up and running is my web app is now up on the rails server. I have not run any other code. I think I will do this once I have the code merged and updated to all the rails syntax for the process flow required for user creation and login.
 
@@ -39,3 +39,8 @@ Ran user model migration
 
 10/28/20
 Fixed some routes and templates. Got the Developer Authentication screen to load and submit. Next steps to include checking to see if the data saved, and to get the github authentication to work as well before moving onto user sign up with forms.
+
+10/29/20
+Decided to work with user sign up first, since the user info isn't saving into the database through my developer auth. 
+- Get Signup to work first
+- 
