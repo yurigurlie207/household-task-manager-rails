@@ -1,6 +1,8 @@
+
+
 class UsersController < ApplicationController
   before_action :require_login
-  skip_before_action :require_login, only: [:index, :new]
+  skip_before_action :require_login, only: [:index, :new, :create]
 
     #this route is for development/testing purposes
     def index
@@ -12,8 +14,10 @@ class UsersController < ApplicationController
     def create
       @user = User.create(user_params)
       return redirect_to controller: 'users', action: 'new' unless @user.save
+
       session[:user_id] = @user.id
       redirect_to controller: 'users', action: 'userhome'
+
     end
 
     def userhome
@@ -25,7 +29,7 @@ class UsersController < ApplicationController
     private
   
     def user_params
-      params.require(:user).permit(:name, :password, :password_confirmation)
+      params.require(:user).permit(:username, :password, :password_confirmation)
     end
    
     def require_login

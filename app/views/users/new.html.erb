@@ -1,31 +1,4 @@
-
-<%= form_for @user, controller: 'users', action: 'create' do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-
-  <%= f.label :email %>
-  <%= f.text_field :email %>
-
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
-
-  <%= f.label :firstname %>
-  <%= f.text_field :firstname %>
-
-  <%= f.label :lastname %>
-  <%= f.text_field :lastname %>
-  
-  <%= f.label :role %>
-  <%= f.text_field :role %>
-
-  <%= f.label :birthdate %>
-  <%= f.date_field :birthdate %>
-
-  <%= f.submit "create" %>
-<% end %>
+<%= render 'form' %>
 
 
 <p><%= link_to 'Home', 'home' %></p>
