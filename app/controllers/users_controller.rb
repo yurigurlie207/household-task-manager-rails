@@ -12,15 +12,15 @@ class UsersController < ApplicationController
     end
    
     def create
-      @user = User.create(user_params)
-      return redirect_to controller: 'users', action: 'new' unless @user.save
+      user = User.create(user_params)
+      render 'new' unless user.save
 
-      session[:user_id] = @user.id
-      redirect_to controller: 'users', action: 'userhome'
+      session[:user_id] = user.id
+      redirect_to '/users/' + user.id.to_s
 
     end
 
-    def userhome
+    def show
       if session[:user_id]
         @user = User.find(session[:user_id])
       end

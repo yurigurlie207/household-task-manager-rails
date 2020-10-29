@@ -1,5 +1,5 @@
 class StaticController < ApplicationController
     def home
-        redirect_to controller: 'users', action: 'userhome' unless !session[:user_id]
+        redirect_to '/users/' + session[:user_id].to_s unless !session[:user_id]
     end
 end
