@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  skip_before_action :verify_authenticity_token, only: :create
+  # skip_before_action :verify_authenticity_token, only: :create
 
   def new
   end
@@ -8,13 +8,13 @@ class SessionsController < ApplicationController
  
     if request.env['omniauth.auth']
       # pp request.env['omniauth.auth']
-      session[:name] = request.env['omniauth.auth']['info']['name']
+      session[:name] = request.env['omniauth.auth']['info']['nickname']
       session[:omniauth_data] = request.env['omniauth.auth']
 
       user = User.find_by(username: session[:name])
-      binding.pry
+      # binding.pry
       return redirect_to '/users/new' unless user
-      session[:user_id] = user.id
+      # session[:user_id] = user.id
       # @user = user
     else
       return redirect_to(controller: 'sessions', action: 'new') if !params[:username] || params[:username].empty?
