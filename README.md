@@ -42,5 +42,7 @@ Fixed some routes and templates. Got the Developer Authentication screen to load
 
 10/29/20
 Decided to work with user sign up first, since the user info isn't saving into the database through my developer auth. 
-- Get Signup to work first
-- 
+Got Signup to work first/logout working
+
+10/30/20
+Let's get signin to work. Then I can continue to work on developer/Git Hub Auth. 
