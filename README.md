@@ -50,3 +50,6 @@ All worked, but one issue remains. How do I go about creating a new user in my a
 
 11/1/20
 Decided to just generate a random password for the user if they don't exist in system, and use third party auth. This person most likely will continue to use third party to login, and if they try to login through app, they won't know the password, but password recovery/reset isn't within the scope of this project, so I don't need to build this part out. 
+
+DONE - next steps...reread project docs and decide how I was to proceed. User validation/error checking on user login flow? Or start building in the rest of the app? I can do my thinking through the week and start doing some work next weekend.
+
