@@ -47,3 +47,6 @@ Got Signup to work first/logout working
 10/30/20
 Let's get signin to work. Then I can continue to work on developer/Git Hub Auth. 
 All worked, but one issue remains. How do I go about creating a new user in my app if after authentication through GitHub, the user doesn't already exist? Specifically, how do I create a password? Do I just redirect them to the sign up page, or do I generate the password for them?
+
+11/1/20
+Decided to just generate a random password for the user if they don't exist in system, and use third party auth. This person most likely will continue to use third party to login, and if they try to login through app, they won't know the password, but password recovery/reset isn't within the scope of this project, so I don't need to build this part out. 
