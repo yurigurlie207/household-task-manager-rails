@@ -12,10 +12,14 @@ class SessionsController < ApplicationController
       session[:omniauth_data] = request.env['omniauth.auth']
 
       user = User.find_by(username: session[:name])
-      # binding.pry
-      return redirect_to '/users/new' unless user
-      # session[:user_id] = user.id
-      # @user = user
+
+      if user
+        session[:user_id] = user.id
+      else
+        user = User.create(username: session[:name], password: session[:name])
+        render 'new' unless user.save
+      end
+      
     else
       return redirect_to(controller: 'sessions', action: 'new') if !params[:username] || params[:username].empty?
       session[:name] = params[:username]
