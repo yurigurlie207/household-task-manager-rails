@@ -13,12 +13,11 @@ class SessionsController < ApplicationController
 
       user = User.find_by(username: session[:name])
 
-      if user
-        session[:user_id] = user.id
-      else
-        user = User.create(username: session[:name], password: session[:name])
+      if !user
+        user = User.create(username: session[:name], password: session[:name], email: session[:omniauth_data]['info']['email'] )
         render 'new' unless user.save
       end
+      session[:user_id] = user.id
       
     else
       return redirect_to(controller: 'sessions', action: 'new') if !params[:username] || params[:username].empty?
