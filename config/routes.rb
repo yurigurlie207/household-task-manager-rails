@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   resources :user_tasks
-  resources :subtasks
+
+  resources :tasks, only: [:show] do
+    resources :subtasks, only: [:show, :index]
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   # resources :users, only: [:new, :create]
 
@@ -17,6 +20,7 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new', as: 'login'
   post '/login', to: 'sessions#create'
   post '/logout', to: 'sessions#destroy', as: 'logout'
+
 
 
   
