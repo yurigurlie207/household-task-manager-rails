@@ -19,6 +19,7 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect_to '/users/' + user.id.to_s
 
+      #try this later: redirect_to @user
     end
 
     def show
