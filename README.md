@@ -53,3 +53,7 @@ Decided to just generate a random password for the user if they don't exist in s
 
 DONE - next steps...reread project docs and decide how I was to proceed. User validation/error checking on user login flow? Or start building in the rest of the app? I can do my thinking through the week and start doing some work next weekend.
 
+11/14/20
+Man, another long hiatus. I think I'll do validations and error messages at the very end of this project for now, once the task and subtask structure has also been built in just so I can tackle it all in one fell swoop.
+
+Today, I will try to set up the task (and potentially subtask models).
