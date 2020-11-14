@@ -1,5 +1,7 @@
 <%= form_for(@task) do |f| %>
 
+    <%= f.fields_for :subtasks do |subtask_builder| %?
 
+    <% end %>
 
-    <%= f.submit =%>
+<%= f.submit =%>

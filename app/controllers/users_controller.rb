@@ -3,8 +3,8 @@
 class UsersController < ApplicationController
   before_action :require_login
   skip_before_action :require_login, only: [:index, :new, :create]
-    #raise params.inspect for debugging
-    
+    #raise params.inspect/whatever.inspect for debugging
+
     #this route is for development/testing purposes
     def index
     end
