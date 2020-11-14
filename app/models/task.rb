@@ -4,7 +4,9 @@ class Task < ApplicationRecord
     accepts_nested_attributes_for :subtasks
 
     def subtasks_attributes=(subtasks_attributes)
-        self.subtasks.build(subtasks_attributes)
+        subtasks_attributes.each do |subtask_attributes|
+            self.subtasks.build(subtask_attributes)
+        end
     end
 
 end
