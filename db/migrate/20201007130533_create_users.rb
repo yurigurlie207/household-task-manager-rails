@@ -9,7 +9,7 @@ class CreateUsers < ActiveRecord::Migration[6.0]
           t.string :lastname
           t.string :role
           t.date :birthdate
-          t.timestamps
+          t.timestamps null: false
       end
     end
 

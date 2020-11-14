@@ -8,7 +8,7 @@ class CreateTasks < ActiveRecord::Migration[6.0]
       t.text :notes
       t.boolean :no_subtask
       t.boolean :complete
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end

@@ -10,8 +10,8 @@ class CreateSubtasks < ActiveRecord::Migration[6.0]
       t.text :feedback
       t.boolean :no_subtask
       t.boolean :complete
-      t.integer :task_id
-      t.timestamps
+      t.belongs_to :task, index: true, foreign_key: true
+      t.timestamps null: false
     end
   end
 end
