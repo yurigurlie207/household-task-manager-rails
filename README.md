@@ -57,3 +57,6 @@ DONE - next steps...reread project docs and decide how I was to proceed. User va
 Man, another long hiatus. I think I'll do validations and error messages at the very end of this project for now, once the task and subtask structure has also been built in just so I can tackle it all in one fell swoop.
 
 Today, I will try to set up the task (and potentially subtask models).
+
+11/15/20
+Okay, so yesterday became a day of reviewing some nested forms concepts. Today I will just try to put it to practice with Task/Subtask relationships, and not worry about anything else like validations, refactoring, formatting, etc. Maybe I can also brainstorm how the user flow will work since this is going to be different than my previous project. 
