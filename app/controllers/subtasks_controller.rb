@@ -9,7 +9,7 @@ class SubtasksController < ApplicationController
 
     private
   
-    def subtask_params
-      params.require(:subtask).permit(:title)
-    end
+    # def subtask_params
+    #   params.require(:subtask).permit(:title, subtask_attributes)
+    # end
 end

@@ -3,13 +3,14 @@ class TasksController < ApplicationController
         @task = Task.new
         #a task needs at least one subtask
         @task.subtasks.build()
+        @task.subtasks.build()
     end
 
     def create
-        # @task = Task.create(task_params)
-        @task = Task.new(task_params)
+        @task = Task.create(task_params)
+        # @task = Task.new()
         # @task.title = params[:task][:title]
-        # @task.subtasks_attributes=(params[:subtasks_attributes])
+        # @task.subtasks_attributes=(params[:task][:subtasks_attributes])
         render 'new' unless @task.save
   
         redirect_to @task
@@ -23,6 +24,6 @@ class TasksController < ApplicationController
     private
   
     def task_params
-      params.require(:task).permit(:title)
+      params.require(:task).permit(:title, :subtasks_attributes => [:title])
     end
 end
