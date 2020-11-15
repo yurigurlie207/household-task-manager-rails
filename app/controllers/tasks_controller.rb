@@ -1,11 +1,15 @@
 class TasksController < ApplicationController
     def new
         @task = Task.new
-        # @task.subtasks.build()
+        #a task needs at least one subtask
+        @task.subtasks.build()
     end
 
     def create
-        @task = Task.create(task_params)
+        # @task = Task.create(task_params)
+        @task = Task.new(task_params)
+        # @task.title = params[:task][:title]
+        # @task.subtasks_attributes=(params[:subtasks_attributes])
         render 'new' unless @task.save
   
         redirect_to @task
