@@ -10,7 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_07_130533) do
+ActiveRecord::Schema.define(version: 2020_11_14_150847) do
+
+  create_table "subtasks", force: :cascade do |t|
+    t.string "title"
+    t.integer "estimated_duration"
+    t.integer "actual_duration"
+    t.date "deadline"
+    t.string "priority"
+    t.text "notes"
+    t.text "feedback"
+    t.boolean "no_subtask"
+    t.boolean "complete"
+    t.integer "task_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["task_id"], name: "index_subtasks_on_task_id"
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.string "title"
+    t.integer "estimated_duration"
+    t.date "deadline"
+    t.string "priority"
+    t.text "notes"
+    t.boolean "no_subtask"
+    t.boolean "complete"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "user_tasks", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "subtask_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["subtask_id"], name: "index_user_tasks_on_subtask_id"
+    t.index ["user_id"], name: "index_user_tasks_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
@@ -24,4 +61,7 @@ ActiveRecord::Schema.define(version: 2020_10_07_130533) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "subtasks", "tasks"
+  add_foreign_key "user_tasks", "subtasks"
+  add_foreign_key "user_tasks", "users"
 end
