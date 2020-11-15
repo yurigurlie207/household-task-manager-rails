@@ -1,7 +1,10 @@
 <%= form_for(@task) do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
 
-    <%= f.fields_for :subtasks do |subtask_builder| %>
-        
-    <% end %>
+        <%= f.fields_for :subtasks do |subtask_builder| %>
+            <%= subtask_builder.label :title %>
+            <%= subtask_builder.text_field :title %>
+        <% end %>
 
 <%= f.submit =%>
