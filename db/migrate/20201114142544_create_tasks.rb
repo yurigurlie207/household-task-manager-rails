@@ -8,7 +8,6 @@ class CreateTasks < ActiveRecord::Migration[6.0]
       t.text :notes
       t.boolean :no_subtask
       t.boolean :complete
-      add_reference :tasks, :subtask, index:true, foreign_key: true
       t.timestamps null: false
     end
   end

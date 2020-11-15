@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_14_150847) do
+ActiveRecord::Schema.define(version: 2020_11_15_173951) do
 
   create_table "subtasks", force: :cascade do |t|
     t.string "title"
@@ -22,9 +22,9 @@ ActiveRecord::Schema.define(version: 2020_11_14_150847) do
     t.text "feedback"
     t.boolean "no_subtask"
     t.boolean "complete"
-    t.integer "task_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "task_id"
     t.index ["task_id"], name: "index_subtasks_on_task_id"
   end
 
