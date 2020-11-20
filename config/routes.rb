@@ -2,8 +2,11 @@ Rails.application.routes.draw do
   # resources :user_tasks
 
   resources :tasks do
-    resources :subtasks, only: [:new, :show, :edit]
+    resources :subtasks, only: [:index, :show]
   end
+
+  resources :subtasks
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   # resources :users, only: [:new, :create]
 
