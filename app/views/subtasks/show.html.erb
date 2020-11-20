@@ -1,4 +1,6 @@
 <%= form_for @subtask do |f| %>
+    <%= task_id_field(@subtask) %>
+
     <%= f.label :title %>
     <%= f.text_field :title %>
 
