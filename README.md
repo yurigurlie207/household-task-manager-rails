@@ -63,3 +63,4 @@ Okay, so yesterday became a day of reviewing some nested forms concepts. Today I
 
 11/20/20
 Today, I've committed to a standing desk. In other news, I did some thinking about my user interface for task/subtask creation. I would like to allow users to continuously add subtasks to a task through either the new or show task forms. Kind of like how one would add education or work experience to a work profile. Eventually, I would also like to allow the user to create a new subtask, and then choose the task that subtask belongs to. That's it. No more, no less. Otherwise it'll get too crazy.
+Upon further reflection, I might have to skill up (AJAX?) to do what I want? So let's keep it simple for now, and just have one set of subtask attributes come up for task creation, and then link the rest of the subtasks through new subtask creation and assigning them the proper task.

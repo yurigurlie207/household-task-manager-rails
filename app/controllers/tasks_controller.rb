@@ -3,7 +3,7 @@ class TasksController < ApplicationController
         @task = Task.new
         #a task needs at least one subtask
         @task.subtasks.build()
-        @task.subtasks.build()
+        # @task.subtasks.build()
     end
 
     def create
