@@ -60,3 +60,6 @@ Today, I will try to set up the task (and potentially subtask models).
 
 11/15/20
 Okay, so yesterday became a day of reviewing some nested forms concepts. Today I will just try to put it to practice with Task/Subtask relationships, and not worry about anything else like validations, refactoring, formatting, etc. Maybe I can also brainstorm how the user flow will work since this is going to be different than my previous project. 
+
+11/20/20
+Today, I've committed to a standing desk. In other news, I did some thinking about my user interface for task/subtask creation. I would like to allow users to continuously add subtasks to a task through either the new or show task forms. Kind of like how one would add education or work experience to a work profile. Eventually, I would also like to allow the user to create a new subtask, and then choose the task that subtask belongs to. That's it. No more, no less. Otherwise it'll get too crazy.
