@@ -1,0 +1,10 @@
+<%= form_for @subtask  do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %><br>
+
+    <%= f.label :task_title %>
+    <%= task_select(@subtask, @path) %><br>
+    <br />
+  
+    <%= f.submit %>
+  <% end %>
