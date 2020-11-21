@@ -66,4 +66,4 @@ Today, I've committed to a standing desk. In other news, I did some thinking abo
 Upon further reflection, I might have to skill up (AJAX?) to do what I want? So let's keep it simple for now, and just have one set of subtask attributes come up for task creation, and then link the rest of the subtasks through new subtask creation and assigning them the proper task.
 
 11/21/20
-Might only have an hour to work today, so let's make today's approach about envisioning what a user might see when it comes to creating tasks, and adding in some general user views from the Task/Subtask views.
+Might only have an hour to work today, so let's make today's approach about envisioning what a user might see when it comes to creating tasks, and adding in some general user views from the Task/Subtask views. Tomorrow, I will get started on the user/subtask join table relationships.working.
