@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # resources :user_tasks
 
   resources :tasks do
-    resources :subtasks, only: [:index, :show]
+    resources :subtasks, only: [:index, :show, :new]
   end
 
   resources :subtasks
