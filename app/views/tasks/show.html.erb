@@ -1,1 +1,10 @@
-showing task here
+<h1> <%= @task.title %> </h1>
+
+<p>
+    <ol>
+    <% @task.subtasks.each do |subtask| %>
+        <li><%= subtask.title %></li>
+    <% end %>
+    </ol>
+</p>
+
