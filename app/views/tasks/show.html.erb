@@ -3,13 +3,13 @@
 <p>
     <ol>
     <% @task.subtasks.each do |subtask| %>
-        <li><%= subtask.title %> - 
-            <ol>
-                <li><% list_users(subtask).each do |user| %>
-                    <%= user %>
-                    <%end%>
-                </li>
-            <ol>
+        <li><%= subtask.title %> :
+            <ul>
+                <% list_users(subtask).each do |user| %>
+                    <li><%= user %></li>
+                <%end%>
+            
+            <ul>
         </li>
     <% end %>
     </ol>

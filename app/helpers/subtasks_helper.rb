@@ -11,10 +11,10 @@ module SubtasksHelper
     def list_users(subtask)
         usertasks = UserTask.where(subtask_id: subtask.id)
         if usertasks
-            usernames = []
-            usertasks.each do |usertask|
-                usernames << User.find_by(id: usertask.user_id).username
+            usernames = usertasks.collect do |usertask|
+                User.find_by(id: usertask.user_id).username
             end
+           
         else
             ["No Users Assigned"]
         end
