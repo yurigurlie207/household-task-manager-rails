@@ -21,6 +21,6 @@ class SubtasksController < ApplicationController
     private
   
     def subtask_params
-      params.require(:subtask).permit(:title, :task_id)
+      params.require(:subtask).permit(:title, :task_id, :user_ids => [])
     end
 end

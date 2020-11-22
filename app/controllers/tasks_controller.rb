@@ -11,6 +11,7 @@ class TasksController < ApplicationController
         # @task = Task.new()
         # @task.title = params[:task][:title]
         # @task.subtasks_attributes=(params[:task][:subtasks_attributes])
+        binding.pry
         render 'new' unless @task.save
   
         redirect_to @task
@@ -24,6 +25,6 @@ class TasksController < ApplicationController
     private
   
     def task_params
-      params.require(:task).permit(:title, :subtasks_attributes => [:title])
+      params.require(:task).permit(:title, :subtasks_attributes => {})
     end
 end
