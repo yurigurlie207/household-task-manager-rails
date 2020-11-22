@@ -67,3 +67,6 @@ Upon further reflection, I might have to skill up (AJAX?) to do what I want? So 
 
 11/21/20
 Might only have an hour to work today, so let's make today's approach about envisioning what a user might see when it comes to creating tasks, and adding in some general user views from the Task/Subtask views. Tomorrow, I will get started on the user/subtask join table relationships.working.
+
+11/22/20
+Getting started on the join table, to see if I can assign subtasks to users.

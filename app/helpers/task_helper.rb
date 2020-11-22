@@ -8,7 +8,7 @@ module TaskHelper
         if subtask.task && path =~ /.*tasks.*subtasks.*/
          text_field_tag "subtask[task_id]", subtask.task.title, :readonly => true
         else
-          select_tag "subtask[task_id]", options_from_collection_for_select(Task.all, :id, :title)
+         select_tag "subtask[task_id]", options_from_collection_for_select(Task.all, :id, :title)
         end
       end
     
