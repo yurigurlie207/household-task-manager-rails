@@ -11,7 +11,7 @@ class TasksController < ApplicationController
         # @task = Task.new()
         # @task.title = params[:task][:title]
         # @task.subtasks_attributes=(params[:task][:subtasks_attributes])
-        binding.pry
+        # binding.pry
         render 'new' unless @task.save
   
         redirect_to @task
