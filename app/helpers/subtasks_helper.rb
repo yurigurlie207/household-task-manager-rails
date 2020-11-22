@@ -7,15 +7,16 @@ module SubtasksHelper
         end
     end
 
-    #return an array of usernames
+    #return an array of usernames, only if there are users assigned
     def list_users(subtask)
         usertasks = UserTask.where(subtask_id: subtask.id)
-        usernames = []
-        usertasks.each do |usertask|
-            usernames << User.find_by(user_id: usertask.user_id)
+        if usertasks
+            usernames = []
+            usertasks.each do |usertask|
+                usernames << User.find_by(id: usertask.user_id).username
+            end
+        else
+            ["No Users Assigned"]
         end
-        binding.pry
-     
-      
     end
 end
