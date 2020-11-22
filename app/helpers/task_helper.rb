@@ -5,8 +5,7 @@ module TaskHelper
     
       # Display dropdown of artists, with name if editing through nested
       def task_select(subtask, path)
-        if subtask.task && path == "nested"
-          binding.pry
+        if subtask.task && path =~ /.*tasks.*subtasks.*/
           hidden_field_tag "subtask[task_id]", subtask.task_id
         else
           select_tag "subtask[task_id]", options_from_collection_for_select(Task.all, :id, :title)

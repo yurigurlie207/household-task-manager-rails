@@ -2,6 +2,7 @@
     <%= f.label :title %>
     <%= f.text_field :title %><br>
 
+    <% @path = request.env['PATH_INFO'] %>
     <%= f.label :task_title %>
     <%= task_select(@subtask, @path) %><br>
     <br />
