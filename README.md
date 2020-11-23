@@ -78,5 +78,3 @@ Next:
 1. I want to add the views from the User profile page so they can see all the subtasks/tasks they are assigned to.
 2. Build in the edit and update functions for user/task/subtasks.
 
-Okay, trying to build a delete link:
-https://stackoverflow.com/questions/9711356/how-to-create-a-link-to-delete-action-in-rails-using-paths-and-link-to

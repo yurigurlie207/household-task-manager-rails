@@ -37,6 +37,7 @@ class SubtasksController < ApplicationController
       end
     end
 
+
     def destroy
       @subtask = Subtask.find(params[:id])
       @task = @subtask.task
