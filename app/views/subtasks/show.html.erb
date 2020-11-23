@@ -1,1 +1,11 @@
-subtask page
+<h1> <%= @subtask.title %> </h1>
+<h2>This subtask belongs to Task: <%= @subtask.task.title %></h2>
+<p>
+    <h3>The following Users are assigned to this subtask:</h3>
+            <ul>
+                <% list_users(@subtask).each do |user| %>
+                    <li><%= user %></li>
+                <%end%>
+            <ul>
+</p>
+

@@ -71,3 +71,5 @@ Might only have an hour to work today, so let's make today's approach about envi
 11/22/20
 Getting started on the join table, to see if I can assign subtasks to users.
 Great - looks like the subtask user assignments work! This just need to be worked into the subtask routes as well.
+
+11/23/20
