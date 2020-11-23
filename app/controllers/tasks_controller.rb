@@ -1,4 +1,7 @@
 class TasksController < ApplicationController
+    def index
+    end
+
     def new
         @task = Task.new
         #a task needs at least one subtask

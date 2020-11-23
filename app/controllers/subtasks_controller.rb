@@ -1,7 +1,10 @@
 class SubtasksController < ApplicationController
+  
+    def index
+    end
+
     def new
         @subtask = Subtask.new(task_id: params[:task_id])
-      
     end
 
     def create
