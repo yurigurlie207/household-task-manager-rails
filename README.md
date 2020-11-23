@@ -78,3 +78,13 @@ Next:
 1. I want to add the views from the User profile page so they can see all the subtasks/tasks they are assigned to.
 2. Build in the edit and update functions for user/task/subtasks.
 
+Tomorrow (and future dates) i will add:
+- edit/delete fuctions for the other models
+- start building in the other elements of the forms
+- put in the form validations
+- check user flow links
+- cookies (does this need to be part of this app?), i think my session id is sufficient
+- styling
+
+
+
