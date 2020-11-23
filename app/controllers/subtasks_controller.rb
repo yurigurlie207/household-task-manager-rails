@@ -21,6 +21,22 @@ class SubtasksController < ApplicationController
         @subtask = Subtask.find(params[:id])
     end
 
+    def edit
+       @subtask = Subtask.find(params[:id])
+    end
+
+    def update
+      @subtask = Subtask.find(params[:id])
+
+      @subtask.update(subtask_params)
+
+      if @subtask.save
+        redirect_to @subtask
+      else
+        render :edit
+      end
+    end
+
     private
   
     def subtask_params
