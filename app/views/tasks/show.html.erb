@@ -3,7 +3,7 @@
 <p>
     <ol>
     <% @task.subtasks.each do |subtask| %>
-        <li><%= subtask.title %> :
+        <li><%= link_to subtask.title, subtask_path(subtask) %> :
             <ul>
                 <% list_users(subtask).each do |user| %>
                     <li><%= user %></li>

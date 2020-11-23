@@ -73,3 +73,7 @@ Getting started on the join table, to see if I can assign subtasks to users.
 Great - looks like the subtask user assignments work! This just need to be worked into the subtask routes as well.
 
 11/23/20
+Updated the subtask and task show pages to display info. Will add full versions later.
+Next:
+1. I want to add the views from the User profile page so they can see all the subtasks/tasks they are assigned to.
+2. Build in the edit and update functions for user/task/subtasks.

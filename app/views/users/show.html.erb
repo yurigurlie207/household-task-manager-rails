@@ -2,6 +2,15 @@
 Hello, <%= @user.username %><br>
 </p>
 
+<h1> You are assigned to the following subtasks: </h1>
+        <p>
+                    <ul>
+                        <% @usertasks.each do |usertask| %>
+                            <li><%= link_to usertask.subtask.title, subtask_path(usertask.subtask) %></li>
+                        <%end%>
+                    <ul>
+        </p>
+
 
 
 <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
