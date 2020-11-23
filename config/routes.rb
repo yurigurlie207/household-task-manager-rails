@@ -2,11 +2,13 @@ Rails.application.routes.draw do
   # resources :user_tasks
 
   resources :tasks do
-    resources :subtasks, only: [:index, :show, :new]
+    resources :subtasks
   end
 
   resources :subtasks
-  delete '/subtasks/:id/destroy', to: 'subtasks#destroy', as: 'delete_subtask'
+  delete '/subtasks/:id', to: 'subtasks#destroy', as: 'delete_subtask'
+ 
+ 
 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

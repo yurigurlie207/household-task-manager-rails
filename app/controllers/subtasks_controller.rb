@@ -41,7 +41,7 @@ class SubtasksController < ApplicationController
       @subtask = Subtask.find(params[:id])
       @task = @subtask.task
       @subtask.destroy
-        flash[:notice] = "Subtask deleted."
+        # flash[:notice] = "Subtask deleted."
       redirect_to task_path(@task)
     end
   
