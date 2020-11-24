@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :subtasks
   end
 
-  # resources :subtasks
+  resources :subtasks
   # delete '/subtasks/:id', to: 'subtasks#destroy', as: 'delete_subtask'
  
  

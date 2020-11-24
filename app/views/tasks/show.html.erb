@@ -14,4 +14,8 @@
     </ol>
 </p>
 
-<%= link_to "Add Subtask", new_task_subtask_path(:task_id => @task.id) %>
+<%= link_to "Add Subtask", new_task_subtask_path(:task_id => @task.id) %> 
+<br>
+<%= form_for @task, method: :delete do |f| %>
+    <p><button type="submit" class="link"><span>Delete Task</span></button></p>
+ <% end %>

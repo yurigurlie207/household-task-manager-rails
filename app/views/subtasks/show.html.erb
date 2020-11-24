@@ -10,7 +10,7 @@
 </p>
 
 <p>
-<%= link_to "Edit Subtask", edit_subtask_url(@subtask) %> | 
+<%= link_to "Edit Subtask", edit_task_subtask_url(@subtask) %> | 
 
 <%= form_for @subtask, method: :delete do |f| %>
     <p><button type="submit" class="link"><span>Delete Subtask</span></button></p>

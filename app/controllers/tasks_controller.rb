@@ -25,6 +25,31 @@ class TasksController < ApplicationController
        @task = Task.find(params[:id])
       end
 
+      def edit
+        @task = Task.find(params[:id])
+     end
+ 
+     def update
+       @task = task.find(params[:id])
+ 
+       @task.update(task_params)
+ 
+       if @task.save
+         redirect_to @task
+       else
+         render :edit
+       end
+     end
+ 
+ 
+     def destroy
+       @task = Task.find(params[:id])
+       @task.destroy
+         # flash[:notice] = "Subtask deleted."
+       redirect_to userhome_path()
+     end
+   
+
     private
   
     def task_params
