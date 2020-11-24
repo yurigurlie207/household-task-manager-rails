@@ -1,0 +1,28 @@
+
+<%= form_for @task do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+
+    <%= f.label :estimated_duration (in minutes) %>
+    <%= f.text_field :estimated_duration %>
+
+    
+    <% if task_uri(@task) ~= "/.*new.*" %>
+        <p>Create at least One Subtask for this task</p>
+        
+            <%= f.fields_for :subtasks do |subtask_builder| %>
+                <%= subtask_builder.label :title %>
+                <%= subtask_builder.text_field :title %>
+
+                <p>Assign at least One Household Member to Subtask</p>
+                <%= subtask_builder.collection_check_boxes :user_ids, User.all, :id, :username %>
+
+            <% end %>
+    <% end %>
+
+    <br><br>
+  
+
+    <%= f.submit %>
+
+<% end %>

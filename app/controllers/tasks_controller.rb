@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+
     def index
     end
 
@@ -11,14 +12,8 @@ class TasksController < ApplicationController
 
     def create
         @task = Task.create(task_params)
-        # @task = Task.new()
-        # @task.title = params[:task][:title]
-        # @task.subtasks_attributes=(params[:task][:subtasks_attributes])
-        # binding.pry
         render 'new' unless @task.save
-  
         redirect_to @task
-        # redirect_to '/users/' + user.id.to_s
       end
   
       def show
@@ -31,7 +26,6 @@ class TasksController < ApplicationController
  
      def update
        @task = Task.find(params[:id])
- 
        @task.update(task_params)
  
        if @task.save
@@ -41,7 +35,7 @@ class TasksController < ApplicationController
        end
      end
  
- 
+
      def destroy
        @task = Task.find(params[:id])
        @task.destroy
