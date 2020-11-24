@@ -14,6 +14,8 @@
     </ol>
 </p>
 
+<%= link_to "Edit Task Info", edit_task_path() %> 
+
 <%= link_to "Add Subtask", new_task_subtask_path(:task_id => @task.id) %> 
 <br>
 <%= form_for @task, method: :delete do |f| %>

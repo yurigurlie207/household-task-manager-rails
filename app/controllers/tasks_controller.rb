@@ -30,7 +30,7 @@ class TasksController < ApplicationController
      end
  
      def update
-       @task = task.find(params[:id])
+       @task = Task.find(params[:id])
  
        @task.update(task_params)
  
