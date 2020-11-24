@@ -6,7 +6,7 @@ Hello, <%= @user.username %><br>
         <p>
                     <ul>
                         <% @usertasks.each do |usertask| %>
-                            <li><%= link_to usertask.subtask.title, subtask_path(usertask.subtask) %></li>
+                            <li><%= link_to usertask.subtask.title, task_subtask_path(usertask.subtask) %></li>
                         <%end%>
                     <ul>
         </p>

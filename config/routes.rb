@@ -1,18 +1,15 @@
 Rails.application.routes.draw do
-  # resources :user_tasks
 
   resources :tasks do
     resources :subtasks
   end
 
-  resources :subtasks
-  delete '/subtasks/:id', to: 'subtasks#destroy', as: 'delete_subtask'
+  # resources :subtasks
+  # delete '/subtasks/:id', to: 'subtasks#destroy', as: 'delete_subtask'
  
  
-
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  # resources :users, only: [:new, :create]
 
   root 'static#home', as: 'home'
   match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
