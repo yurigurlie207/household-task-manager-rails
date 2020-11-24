@@ -1,0 +1,17 @@
+<h1>Editing <%= @task.title %></h1>
+        <p>
+            <h2>Subtasks</h2>
+            <ol>
+                <% @task.subtasks.each do |subtask| %>
+                    <li><%= subtask.title%></li>
+                <% end %>
+            </ol>
+        </p>
+
+<%= form_for @task  do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <br />
+
+  <%= f.submit %>
+<% end %>
