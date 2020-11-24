@@ -1,11 +1,19 @@
 
 <%= form_for @task do |f| %>
     <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title %><br>
 
     <%= f.label :estimated_duration%>
-    <%= f.text_field :estimated_duration %>
+    <%= f.text_field :estimated_duration %><br>
 
+    <%= f.label :deadline %>
+    <%= f.date_field :deadline %><br>
+
+    <%= f.label :priority %>
+    <%= f.text_field :priority %><br><br>
+
+    <%= f.label :notes %>
+    <%= f.text_area :notes %><br>
     
     <% if request.env['PATH_INFO'] =~ /.*new.*/ %>
         <p>Create at least One Subtask for this task</p>
@@ -14,10 +22,15 @@
                 <%= subtask_builder.label :title %>
                 <%= subtask_builder.text_field :title %>
 
-                <p>Assign at least One Household Member to Subtask</p>
+                <h4>Assign at least One Household Member to Subtask</h4>
                 <%= subtask_builder.collection_check_boxes :user_ids, User.all, :id, :username %>
 
             <% end %>
+    <% end %>
+
+    <% if request.env['PATH_INFO'] =~ /.*edit.*/ %>
+        <%= f.label :complete %>
+        <%= f.check_box :complete %>
     <% end %>
 
     <br><br>
