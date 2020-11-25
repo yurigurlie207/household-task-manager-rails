@@ -86,5 +86,10 @@ Tomorrow (and future dates) i will add:
 - cookies (does this need to be part of this app?), i think my session id is sufficient
 - styling
 
+11/24/20
+Finished edit/delete for tasks
+Put in form partial for task
 
+11/25/20
+Let's put in form partials for subtasks as well.
 
