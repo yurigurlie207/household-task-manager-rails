@@ -14,17 +14,4 @@
 <% end %>
 
 
-<%= form_for @subtask  do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :title %><br>
-
-    <% @path = request.env['PATH_INFO'] %>
-    <%= f.label :task_title %>
-    <%= task_select(@subtask, @path) %><br>
-    <br />
-
-    <p>Assign at least One Household Member to Subtask</p>
-    <%= f.collection_check_boxes :user_ids, User.all, :id, :username %>
-    <br />
-    <%= f.submit %>
-  <% end %>
+<%= render 'form' %>

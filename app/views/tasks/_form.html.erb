@@ -3,14 +3,8 @@
     <%= f.label :title %>
     <%= f.text_field :title %><br>
 
-    <%= f.label :estimated_duration%>
-    <%= f.text_field :estimated_duration %><br>
-
     <%= f.label :deadline %>
     <%= f.date_field :deadline %><br>
-
-    <%= f.label :priority %>
-    <%= f.text_field :priority %><br><br>
 
     <%= f.label :notes %>
     <%= f.text_area :notes %><br>
@@ -28,10 +22,6 @@
             <% end %>
     <% end %>
 
-    <% if request.env['PATH_INFO'] =~ /.*edit.*/ %>
-        <%= f.label :complete %>
-        <%= f.check_box :complete %>
-    <% end %>
 
     <br><br>
   

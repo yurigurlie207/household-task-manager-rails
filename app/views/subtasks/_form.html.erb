@@ -1,0 +1,37 @@
+
+<%= form_for @subtask  do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %><br>
+
+    <%= f.label :estimated_duration%>
+    <%= f.text_field :estimated_duration %><br>
+
+    <%= f.label :actual_duration%>
+    <%= f.text_field :actual_duration %><br>
+
+    <%= f.label :priority %>
+    <%= f.text_field :priority %><br><br>
+
+    <%= f.label :notes %>
+    <%= f.text_area :notes %><br>
+
+    <% @path = request.env['PATH_INFO'] %>
+    <%= f.label :task_title %>
+    <%= task_select(@subtask, @path) %><br>
+    <br />
+
+    <p>Assign at least One Household Member to Subtask</p>
+    <%= f.collection_check_boxes :user_ids, User.all, :id, :username %>
+    <br />
+
+    <% if request.env['PATH_INFO'] =~ /.*edit.*/ %>
+        <%= f.label :complete %>
+        <%= f.check_box :complete %>
+    <% end %>
+
+    <br><br>
+  
+
+    <%= f.submit %>
+
+<% end %>
