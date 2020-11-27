@@ -46,9 +46,10 @@ class UsersController < ApplicationController
 
 
     def destroy
+      session.delete :user_id
       @user = User.find(params[:id])
       @user.destroy
-      session.delete :user_id
+     
         # flash[:notice] = "Subtask deleted."
         redirect_to '/'
     end
