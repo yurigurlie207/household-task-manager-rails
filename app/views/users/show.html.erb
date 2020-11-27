@@ -2,6 +2,18 @@
 Hello, <%= @user.username %><br>
 </p>
 
+<div>First Name: <%= @user.firstname %> </div>
+<div>Last Name: <%= @user.lastname %></div>
+<div>Email: <%= @user.email %></div>
+<div>Role: <%= @user.role %></div>
+<div>DOB: <%= @user.birthdate %></div>
+
+<%= link_to "Edit Profile", edit_user_url(@user) %><br> | 
+
+<%= form_for @user, method: :delete do |f| %>
+    <p><button type="submit" class="link"><span>Delete My Profile</span></button></p>
+ <% end %>
+
 <h1> You are assigned to the following subtasks: </h1>
         <p>
                     <ul>
@@ -15,4 +27,4 @@ Hello, <%= @user.username %><br>
 
 <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
     <input type=submit value='logout'>
-<% end %>
+<% end %> 
