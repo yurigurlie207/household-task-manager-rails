@@ -7,18 +7,6 @@
 <div>Role: <%= @user.role %></div>
 <div>DOB: <%= @user.birthdate %></div>
 
+<%= link_to "Edit Profile", edit_user(@user) %> |
 
-<br><br>
-<div>
-  <% can_edit = 0 %>
-  <% if session[:user_id] == @user.id %>
-    <% can_edit = 1 %>
-  <% end %>
-
-   <% if can_edit == 1 %>
-   <%= @form_open = '<form style="display:inline;" action="' + "../user/#{@user.id}/edit" + '">' %>
-     <button type="submit">Update Profile</button></form><br><br>
-   <% end %>
-</div>
-
-<div><a href="../user/userhome">User Home</a> | <a href= "../user/logout">Log Out</a></div>
+<%= link_to "Delete User", delete_user(@user) %>

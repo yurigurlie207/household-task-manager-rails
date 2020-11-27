@@ -93,3 +93,11 @@ Put in form partial for task
 11/25/20
 Let's put in form partials for subtasks as well.
 
+11/26/20
+Put in the user edit/delete/logout stuff
+Add in links for all the views so everything is connected
+Validations
+
+
+
+

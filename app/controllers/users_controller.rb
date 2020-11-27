@@ -29,11 +29,27 @@ class UsersController < ApplicationController
         @usertasks = UserTask.where(user_id: @user.id)
       end
     end
-  
+
+    def edit
+      @user = User.find(params[:id])
+    end
+
+    def update
+      @user = User.find(params[:id])
+
+      @user.update(subtask_params)
+
+      if @user.save
+        redirect_to @user
+      else
+        render :edit
+      end
+    end
+    
     private
   
     def user_params
-      params.require(:user).permit(:username, :password, :password_confirmation)
+      params.require(:user).permit(:username, :firstname, :lastname, :role, :birthdate, :password, :password_confirmation)
     end
    
     def require_login
