@@ -1,5 +1,16 @@
 
 <%= form_for @task do |f| %>
+    <% if @task.errors.any? %>
+    <div id="error_explanation">
+      <h2>There were some errors:</h2>
+      <ul>
+        <% @task.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
     <%= f.label :title %>
     <%= f.text_field :title %><br>
 
@@ -13,6 +24,18 @@
         <p>Create at least One Subtask for this task</p>
         
             <%= f.fields_for :subtasks do |subtask_builder| %>
+                
+                <% if subtask_builder.errors.any? %>
+                <div id="error_explanation">
+                  <h2>There were some errors:</h2>
+                  <ul>
+                    <% subtask_builder.errors.full_messages.each do |message| %>
+                      <li><%= message %></li>
+                    <% end %>
+                  </ul>
+                </div>
+              <% end %>
+
                 <%= subtask_builder.label :title %>
                 <%= subtask_builder.text_field :title %>
 

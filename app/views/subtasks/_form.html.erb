@@ -1,5 +1,16 @@
 
 <%= form_for @subtask  do |f| %>
+    <% if @subtask.errors.any? %>
+    <div id="error_explanation">
+      <h2>There were some errors:</h2>
+      <ul>
+        <% @subtask.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
     <%= f.label :title %>
     <%= f.text_field :title %><br>
 
