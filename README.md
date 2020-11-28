@@ -96,7 +96,8 @@ Let's put in form partials for subtasks as well.
 11/26/20
 Put in the user edit/delete/logout stuff
 Add in links for all the views so everything is connected
-Validations
+
+Validations tomm: https://learn.co/tracks/full-stack-web-development-v8/module-13-rails/section-6-validations-and-forms/validations-with-form_tag
 
 
 
