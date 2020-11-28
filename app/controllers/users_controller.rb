@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   before_action :require_login
   skip_before_action :require_login, only: [:index, :new, :create]
     #raise params.inspect/whatever.inspect for debugging
+  before_action :set_user!, only: [:show, :edit, :update, :destroy]
 
     def index
     end
@@ -63,6 +64,10 @@ class UsersController < ApplicationController
    
     def require_login
       return head(:forbidden) unless session.include? :user_id
+    end
+
+    def set_user!
+      @user = User.find(params[:id])
     end
 
 

@@ -2,7 +2,10 @@
 <%= form_for @task do |f| %>
     <% if @task.errors.any? %>
     <div id="error_explanation">
-      <h2>There were some errors:</h2>
+    <h2>
+    <%= pluralize(@task.errors.count, "error") %>
+    prohibited this post from being saved:
+  </h2>
       <ul>
         <% @task.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -27,7 +30,10 @@
                 
                 <% if subtask_builder.errors.any? %>
                 <div id="error_explanation">
-                  <h2>There were some errors:</h2>
+                <h2>
+                <%= pluralize(@subtask_builder.errors.count, "error") %>
+                prohibited this post from being saved:
+              </h2>
                   <ul>
                     <% subtask_builder.errors.full_messages.each do |message| %>
                       <li><%= message %></li>

@@ -2,7 +2,10 @@
 <%= form_for @subtask  do |f| %>
     <% if @subtask.errors.any? %>
     <div id="error_explanation">
-      <h2>There were some errors:</h2>
+      < <h2>
+      <%= pluralize(@subtask.errors.count, "error") %>
+      prohibited this post from being saved:
+    </h2>
       <ul>
         <% @subtask.errors.full_messages.each do |message| %>
           <li><%= message %></li>
