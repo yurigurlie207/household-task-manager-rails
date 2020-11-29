@@ -1,5 +1,5 @@
 <p>
-Hello, <%= @user.username %><br>
+<h1>Hello, <%= @user.username %></h1>
 </p>
 
 <div>First Name: <%= @user.firstname %> </div>
@@ -12,9 +12,11 @@ Hello, <%= @user.username %><br>
 
 <%= form_for @user, method: :delete do |f| %>
     <p><button type="submit" class="link"><span>Delete My Profile</span></button></p>
- <% end %>
+ <% end %> |
 
-<h1> You are assigned to the following subtasks: </h1>
+ <%= link_to "Create New Task", task_new_url() %><br> | 
+
+<h2> You are assigned to the following subtasks: </h2>
         <p>
                     <ul>
                         <% @usertasks.each do |usertask| %>
@@ -24,7 +26,8 @@ Hello, <%= @user.username %><br>
         </p>
 
 
-
+<p>
 <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
     <input type=submit value='logout'>
 <% end %> 
+</p>
