@@ -12,8 +12,13 @@ class TasksController < ApplicationController
 
     def create
         @task = Task.create(task_params)
-        render 'new' unless @task.save
-        redirect_to @task
+
+        if @task.save
+          redirect_to @task
+        else
+          render 'new'
+        end
+
       end
   
       def show
@@ -47,6 +52,6 @@ class TasksController < ApplicationController
     private
   
     def task_params
-      params.require(:task).permit(:title, :subtasks_attributes => {})
+      params.require(:task).permit(:title, :deadline, :notes, :subtasks_attributes => {})
     end
 end

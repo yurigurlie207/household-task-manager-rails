@@ -2,7 +2,7 @@
 <%= form_for @subtask  do |f| %>
     <% if @subtask.errors.any? %>
     <div id="error_explanation">
-      < <h2>
+      <h2>
       <%= pluralize(@subtask.errors.count, "error") %>
       prohibited this post from being saved:
     </h2>
@@ -14,20 +14,30 @@
     </div>
   <% end %>
 
+  <p>
     <%= f.label :title %>
-    <%= f.text_field :title %><br>
+    <%= f.text_field :title %>
+    </p>
 
-    <%= f.label :estimated_duration%>
-    <%= f.text_field :estimated_duration %><br>
+    <p>
+    <%= f.label :estimated_duration %>
+    <%= estimated_select(@subtask) %>
+    </p>
 
+    <p>
     <%= f.label :actual_duration%>
-    <%= f.text_field :actual_duration %><br>
+    <%= actual_select(@subtask) %>
+    </p>
 
+    <p>
     <%= f.label :priority %>
-    <%= f.text_field :priority %><br><br>
+    <%= priority_select(@subtask) %>
+    </p>
 
+    <p>
     <%= f.label :notes %>
-    <%= f.text_area :notes %><br>
+    <%= f.text_area :notes %>
+    </p>
 
     <% @path = request.env['PATH_INFO'] %>
     <%= f.label :task_title %>

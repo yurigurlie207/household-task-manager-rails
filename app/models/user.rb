@@ -15,7 +15,7 @@ class User < ApplicationRecord
     validates :email, uniqueness: {
       message: 'another user already has this email'
     }
-    validates :birthdate, on_or_before: lambda { Date.current }
+    validates :birthdate, date: { before: Proc.new { Time.now } }
     
 
    #  validates :title, presence: true

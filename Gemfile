@@ -7,7 +7,7 @@ gem 'dotenv-rails'
 gem 'omniauth-github'
 gem 'omniauth'
 gem 'date_validator', '~> 0.10.0'
-gem install date_validator
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'

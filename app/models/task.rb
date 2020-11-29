@@ -6,10 +6,7 @@ class Task < ApplicationRecord
     validates :title, presence: true
     validates :notes, length: { maximum: 500 }
  
-     validates :deadline, numericality: {
-         greater_than_or_equal_to: Date.today.year,
-         message: 'deadline must be today, or in the future'
-     }
+     validates :deadline, date: { on_or_after: Proc.new { Time.now } }
 
     # def subtasks_attributes=(subtasks_attributes)
     #     subtasks_attributes.each do |i,subtask_attributes|
