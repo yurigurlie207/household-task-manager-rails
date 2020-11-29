@@ -12,7 +12,7 @@ class TasksController < ApplicationController
 
     def create
         @task = Task.create(task_params)
-        @task.user_id = session[user_id]
+        @task.user_id = session[:user_id]
 
         if @task.save
           redirect_to @task
@@ -46,7 +46,7 @@ class TasksController < ApplicationController
        @task = Task.find(params[:id])
        @task.destroy
          # flash[:notice] = "Subtask deleted."
-       redirect_to userhome_path()
+       redirect_to @user
      end
    
 
