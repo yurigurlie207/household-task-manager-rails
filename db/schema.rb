@@ -10,17 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_15_173951) do
+ActiveRecord::Schema.define(version: 2020_11_29_172541) do
 
   create_table "subtasks", force: :cascade do |t|
     t.string "title"
     t.integer "estimated_duration"
     t.integer "actual_duration"
-    t.date "deadline"
     t.string "priority"
     t.text "notes"
-    t.text "feedback"
-    t.boolean "no_subtask"
     t.boolean "complete"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -30,11 +27,8 @@ ActiveRecord::Schema.define(version: 2020_11_15_173951) do
 
   create_table "tasks", force: :cascade do |t|
     t.string "title"
-    t.integer "estimated_duration"
     t.date "deadline"
-    t.string "priority"
     t.text "notes"
-    t.boolean "no_subtask"
     t.boolean "complete"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

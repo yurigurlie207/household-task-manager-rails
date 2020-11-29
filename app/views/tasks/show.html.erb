@@ -1,4 +1,4 @@
-<h1> <%= @task.title %> </h1>
+<h1> <%= @task.title %> : This task was created by: <%= User.find_by(id: @task.user_id).username %></h1>
 
 <p>
     <ol>

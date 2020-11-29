@@ -12,6 +12,7 @@ class TasksController < ApplicationController
 
     def create
         @task = Task.create(task_params)
+        @task.user_id = session[user_id]
 
         if @task.save
           redirect_to @task
