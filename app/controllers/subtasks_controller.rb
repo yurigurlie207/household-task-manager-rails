@@ -8,13 +8,17 @@ class SubtasksController < ApplicationController
     end
 
     def create
-        @subtask = Subtask.new(subtask_params)
-
-        if @subtask.save
+      # @subtask = Subtask.create(subtask_params.except(:user_ids))
+      #   binding.pry
+        if subtask_params[:user_ids].count >= 2
+          @subtask.user_ids = subtask_params[:user_ids]
           redirect_to @subtask
         else
+          if subtask_params[:user_ids].count == 1
+            @subtask.errors[:base] << "Need to assign at least one user" 
+          end
           render :new
-        end
+        ends
     end
     
     def show
@@ -28,12 +32,11 @@ class SubtasksController < ApplicationController
     def update
       @subtask = Subtask.find(params[:id])
 
-      @subtask.update(subtask_params)
-
-      if @subtask.save
-        redirect_to @subtask
+      if subtask_params[:user_ids].count == 1 || !@subtask.update(subtask_params)
+         @subtask.errors[:base] << "Need to assign at least one user" 
+         render :edit
       else
-        render :edit
+        redirect_to @subtask
       end
     end
 

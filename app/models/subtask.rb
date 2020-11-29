@@ -5,7 +5,7 @@ class Subtask < ApplicationRecord
 
   validates :title, presence: true
   validates :notes, length: { maximum: 500 }
-  validates :user_ids, presence: true
+  # validates :user_ids, presence: true
 
  
 end
