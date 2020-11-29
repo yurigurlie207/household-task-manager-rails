@@ -10,14 +10,13 @@ class User < ApplicationRecord
    validates :email, presence: true
 
    validates :username, uniqueness: {
-      message: 'another user already has this username'
+      message: 'is already being used by another user'
     }
     validates :email, uniqueness: {
       message: 'another user already has this email'
     }
-    validates :birthdate, numericality: {
-        less_than_or_equal_to: Date.today.year
-    }
+    validates :birthdate, on_or_before: lambda { Date.current }
+    
 
    #  validates :title, presence: true
    #  validates :title, uniqueness: {

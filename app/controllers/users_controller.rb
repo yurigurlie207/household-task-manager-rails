@@ -1,5 +1,3 @@
-
-
 class UsersController < ApplicationController
   before_action :require_login
   skip_before_action :require_login, only: [:index, :new, :create]
@@ -15,11 +13,12 @@ class UsersController < ApplicationController
    
     def create
       @user = User.create(user_params)
-      render 'new' unless @user.save
-
-      session[:user_id] = @user.id
-      redirect_to @user
-
+      if @user.save
+        session[:user_id] = @user.id
+        redirect_to @user
+      else
+        render 'new'
+      end
     end
 
     def show
