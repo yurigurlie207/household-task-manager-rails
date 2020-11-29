@@ -1,5 +1,4 @@
 module SubtasksHelper
-
     def estimated_select(subtask)
         select_tag "subtask[estimated_duration]", options_for_select(['5 minutes','15 minutes', '30 minutes', '45 minutes', '60 minutes'], '5 minutes')
     end

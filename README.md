@@ -100,5 +100,7 @@ Add in links for all the views so everything is connected
 Validations tomm: https://learn.co/tracks/full-stack-web-development-v8/module-13-rails/section-6-validations-and-forms/validations-with-form_tag
 
 
+11/28/20 and 11/29/20
+Continue to work through user input validations plus a bit of formatting
 
 
