@@ -10,9 +10,7 @@
 
 <%= link_to "Edit Profile", edit_user_url(@user) %><br> | 
 
-<%= form_for @user, method: :delete do |f| %>
-    <p><button type="submit" class="link"><span>Delete My Profile</span></button></p>
- <% end %> |
+<%= button_to "Delete My Profile", user_path(@user), method: :delete %> | <br>
 
  <%= link_to "Create New Task", new_task_url() %><br>
 
