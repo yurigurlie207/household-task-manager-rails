@@ -8,7 +8,7 @@ class SubtasksController < ApplicationController
     end
 
     def create
-      # @subtask = Subtask.create(subtask_params.except(:user_ids))
+        @subtask = Subtask.create(subtask_params.except(:user_ids))
       #   binding.pry
         if subtask_params[:user_ids].count >= 2
           @subtask.user_ids = subtask_params[:user_ids]
@@ -55,5 +55,4 @@ class SubtasksController < ApplicationController
     def subtask_params
       params.require(:subtask).permit(:title, :task_id, :user_ids => [])
     end
-
 end
