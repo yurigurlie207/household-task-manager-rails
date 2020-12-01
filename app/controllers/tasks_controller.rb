@@ -4,16 +4,14 @@ class TasksController < ApplicationController
     end
 
     def new
-        @task = Task.new
-        #a task needs at least one subtask
-        @task.subtasks.build()
-
+          @task = Task.new
+          @task.subtasks.build()
     end
 
     def create
         @task = Task.create(task_params)
         @task.user_id = session[:user_id]
-
+  
         if @task.save
           redirect_to @task
         else
