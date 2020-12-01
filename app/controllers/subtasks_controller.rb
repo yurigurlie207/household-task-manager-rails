@@ -18,7 +18,7 @@ class SubtasksController < ApplicationController
             @subtask.errors[:base] << "Need to assign at least one user" 
           end
           render :new
-        ends
+        end
     end
     
     def show
@@ -55,4 +55,5 @@ class SubtasksController < ApplicationController
     def subtask_params
       params.require(:subtask).permit(:title, :task_id, :user_ids => [])
     end
+
 end
