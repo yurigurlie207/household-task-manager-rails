@@ -7,6 +7,7 @@ class Subtask < ApplicationRecord
 
   validates :title, presence: true
   validates :notes, length: { maximum: 500 }
+  # validates :task_id, presence: true
 
   # validates_with SubtaskusersValidator - decided not to build this, because user_ids isn't really part of a subtask record
   #also, functionally, there doesn't need to be a user assigned to a task or subtask, as it's just a decision 
