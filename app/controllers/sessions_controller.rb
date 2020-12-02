@@ -16,7 +16,8 @@ class SessionsController < ApplicationController
 
       if !@user
         @user = User.create(username: session[:name], password: session[:name], email: session[:omniauth_data]['info']['email'] )
-        return render 'new' unless @user.save
+        flash[:notice] = "was not able to create new user based on GitHub credientials"
+        return redirect_to '/users/new' unless @user.save
       end
       session[:user_id] = @user.id
       
@@ -25,7 +26,8 @@ class SessionsController < ApplicationController
       @user = User.find_by(username: params[:username]).try(:authenticate, params[:password])
 
       if !params[:username] || params[:username].empty? || !@user
-        return render 'new', notice: "wrong username and/or password"
+        flash[:notice] = "wrong username and/or password"
+        return render 'new'
       else
         session[:name] = params[:username]
         session[:user_id] = @user.id
