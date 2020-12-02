@@ -11,11 +11,12 @@ class SessionsController < ApplicationController
       session[:name] = request.env['omniauth.auth']['info']['nickname']
       session[:omniauth_data] = request.env['omniauth.auth']
 
+      # binding.pry
       @user = User.find_by(username: session[:name])
 
       if !@user
         @user = User.create(username: session[:name], password: session[:name], email: session[:omniauth_data]['info']['email'] )
-        render 'new' unless @user.save
+        return render 'new' unless @user.save
       end
       session[:user_id] = @user.id
       
