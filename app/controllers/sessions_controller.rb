@@ -20,21 +20,19 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       
     else
-      return redirect_to(controller: 'sessions', action: 'new') if !params[:username] || params[:username].empty?
-      session[:name] = params[:username]
-      @user = User.find_by(username: params[:username])
-     
-      @user = @user.try(:authenticate, params[:password])
-      if @user
-        session[:user_id] = @user.id
+
+      @user = User.find_by(username: params[:username]).try(:authenticate, params[:password])
+
+      if !params[:username] || params[:username].empty? || !@user
+        return render 'new', notice: "wrong username and/or password"
       else
-        return redirect_to '/login'
+        session[:name] = params[:username]
+        session[:user_id] = @user.id
       end
-      # @user = user
-      # redirect_to '/users/' + session[:user_id].to_s
+
     end
 
-    redirect_to user_path(@user)
+    redirect_to @user
   end
 
   def destroy

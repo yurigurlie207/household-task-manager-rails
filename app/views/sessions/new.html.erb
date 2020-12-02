@@ -1,7 +1,9 @@
 
-
+<div class = "home">
+<p><%= flash[:notice] %></p>
 <%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
     <input name="username" type="text" id="username" placeholder="username">
     <input name="password" type="text" id="password" placeholder="password">
     <input type="submit" value='login'>
   <% end %>
+</div>
