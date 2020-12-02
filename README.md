@@ -105,3 +105,12 @@ Continue to work through user input validations plus a bit of formatting
 
 
 12/1/20
+Added some buttons, and made some decisions about errors and accepted some funtionality flaws.
+
+12/2/20
+Formatting and fine tuning today. Maybe brainstorm a little bit on how to tackle wrapping up the project as well (goal here is to start on the next course sections starting next year).
+
+Remaining things:
+- formatting/layouts
+- testing/debugging
+- refactoring
