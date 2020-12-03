@@ -117,3 +117,8 @@ Remaining things:
 
 12/3/20
 More layout work, and tackle any bug and lite refactor as I go along.
+
+Next steps:
+ - clear out database, run migrations, and test app flow
+ - refactor (maybe I can record a refactor session)
+ - blog
