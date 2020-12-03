@@ -14,9 +14,9 @@
  *= require_self
  */
 
- .home
+ .home, .userhome
  {
-    width: 400px;
+    width: 500px;
     margin: 100px auto;
  }
 
@@ -25,4 +25,9 @@
      color: red;
  }
 
- 
+ .taskbox
+ {
+     margin-top: 20px;
+    border: 1px solid;
+    border-radius: 20px;
+ }

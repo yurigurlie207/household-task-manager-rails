@@ -114,3 +114,6 @@ Remaining things:
 - formatting/layouts
 - testing/debugging
 - refactoring
+
+12/3/20
+More layout work, and tackle any bug and lite refactor as I go along.
