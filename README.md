@@ -122,3 +122,4 @@ Next steps:
  - clear out database, run migrations, and test app flow
  - refactor (maybe I can record a refactor session)
  - blog
+ - add that european license I saw?
