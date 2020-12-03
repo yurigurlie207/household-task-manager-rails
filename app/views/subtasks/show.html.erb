@@ -1,23 +1,29 @@
-<h1> <%= @subtask.title %> </h1>
-<h2>This subtask belongs to Task: <%= link_to @subtask.task.title, task_path(@subtask.task) %> </h2>
-<p>
-    <h3>The following Users are assigned to this subtask:</h3>
-            <ul>
-                <% list_users(@subtask).each do |user| %>
-                    <li><%= user %></li>
-                <%end%>
-            <ul>
-</p>
+<div class= "taskshow">
+    <h2> <%= @subtask.title %> </h2>
+    <h3>&emsp;This subtask is part of: <%= link_to @subtask.task.title, task_path(@subtask.task) %> </h3>
+    <h4>&emsp;Status: <%= if @subtask.complete then "complete" else "in progress" end %> </h4>
+    
+    
+    <p>
+        <h3>The following Users are assigned to this subtask:</h3>
+                <ul>
+                    <% list_users(@subtask).each do |user| %>
+                        <li><%= user %></li>
+                    <%end%>
+                <ul>
+    </p>
+    
+    <br><br>
+    <p>
+    <%= button_to "Edit Subtask", edit_task_subtask_url(@subtask), method: :get %> <br>
 
-<p>
-<%= link_to "Edit Subtask", edit_task_subtask_url(@subtask) %> | 
-
-<%= button_to "Delete Subtask", subtask_path(@subtask), method: :delete %>
+    <%= button_to "Delete Subtask", subtask_path(@subtask), method: :delete %>
 
 
-<!-- <%= form_for @subtask, method: :delete do |f| %>
-     <p><button type="submit" class="link"><span>Delete Subtask</span></button></p>
- <% end %> -->
+    <!-- <%= form_for @subtask, method: :delete do |f| %>
+        <p><button type="submit" class="link"><span>Delete Subtask</span></button></p>
+    <% end %> -->
 
 
-</p>
+    </p>
+</div>

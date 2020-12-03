@@ -9,15 +9,15 @@
     <p>Role: <%= @user.role %></p>
     <p>DOB: <%= @user.birthdate %></p>
 
-    <%= button_to "Update My Profile", edit_user_url(@user) %> <br>
+    <%= button_to "Update My Profile", edit_user_url(@user), method: :get %> <br>
 
     <%= button_to "Delete My Profile", user_path(@user), method: :delete %> <br>
 
     <%= button_to "Log Out", logout_path, method: :post %> 
 
     <div class = "taskbox">
-    <%= button_to "Create New Task", new_task_url() %> <br>
-    <%= button_to "Create New Subtask", new_subtask_url() %> <br>
+    <%= button_to "Create New Task", new_task_url(), method: :get %> <br>
+    <%= button_to "Create New Subtask", new_subtask_url(), method: :get %> <br>
 
     <h3> You are assigned to the following subtasks: </h3>
             <p>
