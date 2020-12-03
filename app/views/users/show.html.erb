@@ -11,29 +11,22 @@
 
     <%= button_to "Update My Profile", edit_user_url(@user) %> <br>
 
-    <%= button_to "Delete My Profile", user_path(@user), method: :delete %> 
+    <%= button_to "Delete My Profile", user_path(@user), method: :delete %> <br>
 
     <%= button_to "Log Out", logout_path, method: :post %> 
 
-    <p>
-    <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
-        <input type=submit value='logout'>
-    <% end %> 
-    </p>
-
     <div class = "taskbox">
-    <%= link_to "Create New Task", new_task_url() %><br>
+    <%= button_to "Create New Task", new_task_url() %> <br>
+    <%= button_to "Create New Subtask", new_subtask_url() %> <br>
 
-    <h2> You are assigned to the following subtasks: </h2>
+    <h3> You are assigned to the following subtasks: </h3>
             <p>
-                        <ul>
-                            <% @usertasks.each do |usertask| %>
-                                <li><%= link_to usertask.subtask.task.title, task_path(usertask.subtask.task) %> - <%= link_to usertask.subtask.title, task_subtask_path(usertask.subtask) %></li>
-                            <%end%>
-                        <ul>
+                <ul>
+                    <% @usertasks.each do |usertask| %>
+                        <li><%= link_to usertask.subtask.task.title, task_path(usertask.subtask.task) %> - <%= link_to usertask.subtask.title, task_subtask_path(usertask.subtask) %></li>
+                    <%end%>
+                <ul>
             </p>
 
-
-  
     </div>
 </div>
