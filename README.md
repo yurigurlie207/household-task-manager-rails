@@ -126,3 +126,7 @@ Next steps:
 
  12/5/20
  Let's try to refactor a bit today.
+
+ Next:
+ blog post, and video walkthrough. Getting any bugs along the way.
+ I think it's mostly in good shape.

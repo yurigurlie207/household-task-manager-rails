@@ -1,7 +1,4 @@
 module TaskHelper
-    # def display_artist(song)
-    #     song.artist.nil? ? link_to("Add Artist", edit_song_path(song)) : link_to(song.artist_name, artist_path(song.artist))
-    #   end
     
       # Display dropdown of artists, with name if editing through nested
       def task_select(subtask, path)
@@ -12,10 +9,4 @@ module TaskHelper
         end
       end
     
-    # Display name if editing through nested
-    #   def display_name(song, path)
-    #     if song.artist && path == "nested"
-    #       song.artist.name
-    #     end
-    #   end
 end
