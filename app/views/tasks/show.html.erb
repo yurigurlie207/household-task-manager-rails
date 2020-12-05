@@ -23,5 +23,7 @@
     <%= button_to "Add New Subtask", new_task_subtask_path(:task_id => @task.id), method: :get %> <br>
     
     <%= button_to "Delete Task", task_path(@task), method: :delete %>
+
+    <p><%= link_to 'Home', home_url() %></p>
 </div>
 
