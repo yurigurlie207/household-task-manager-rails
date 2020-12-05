@@ -12,7 +12,7 @@ module TaskHelper
         end
       end
     
-      # Display name if editing through nested
+    # Display name if editing through nested
     #   def display_name(song, path)
     #     if song.artist && path == "nested"
     #       song.artist.name

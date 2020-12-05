@@ -1,8 +1,10 @@
-<p class="notice"><%= flash[:notice] %></p>
+<div class="home">
+    <p class="notice"><%= flash[:notice] %></p>
 
-<%= render 'form' %>
+    <%= render 'form' %>
 
 
-<p><%= link_to 'Home', 'home' %></p>
+    <p><%= link_to 'Home', home_url() %></p>
+</div>
 
 
