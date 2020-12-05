@@ -6,8 +6,8 @@ class SessionsController < ApplicationController
 
   def create
  
-    if request.env['omniauth.auth']
-      # pp request.env['omniauth.auth']
+    if request.env['omniauth.auth'] #if third party auth (Github)
+   
       session[:name] = request.env['omniauth.auth']['info']['nickname']
       session[:omniauth_data] = request.env['omniauth.auth']
 
@@ -15,12 +15,15 @@ class SessionsController < ApplicationController
 
       if !@user
         @user = User.create(username: session[:name], password: session[:name], email: session[:omniauth_data]['info']['email'] )
-        flash[:notice] = "was not able to create new user based on GitHub credientials"
-        return redirect_to '/users/new' unless @user.save
+        if !@user.save
+          flash[:notice] = "was not able to create new user based on GitHub credientials"
+          return redirect_to new_user_path() 
+        end
       end
+
       session[:user_id] = @user.id
       
-    else
+    else #auth through app login
 
       @user = User.find_by(username: params[:username]).try(:authenticate, params[:password])
 
@@ -28,7 +31,6 @@ class SessionsController < ApplicationController
         flash[:notice] = "wrong username and/or password"
         return render 'new'
       else
-        session[:name] = params[:username]
         session[:user_id] = @user.id
       end
 
@@ -39,8 +41,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session.delete :user_id
-
-    redirect_to '/'
+    redirect_to home_path()
   end
 
 end
