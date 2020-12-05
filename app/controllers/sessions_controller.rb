@@ -29,7 +29,7 @@ class SessionsController < ApplicationController
 
       if !params[:username] || params[:username].empty? || !@user
         flash[:notice] = "wrong username and/or password"
-        return render 'new'
+        return render :new
       else
         session[:user_id] = @user.id
       end

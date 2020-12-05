@@ -46,7 +46,7 @@ class UsersController < ApplicationController
       session.delete :user_id
       @user.destroy
      
-      redirect_to '/'
+      redirect_to home_path()
     end
   
 
