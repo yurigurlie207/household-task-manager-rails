@@ -123,3 +123,6 @@ Next steps:
  - refactor (maybe I can record a refactor session)
  - blog
  - add that european license I saw?
+
+ 12/5/20
+ Let's try to refactor a bit today.

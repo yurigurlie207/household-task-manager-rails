@@ -11,7 +11,6 @@ class SessionsController < ApplicationController
       session[:name] = request.env['omniauth.auth']['info']['nickname']
       session[:omniauth_data] = request.env['omniauth.auth']
 
-      # binding.pry
       @user = User.find_by(username: session[:name])
 
       if !@user
