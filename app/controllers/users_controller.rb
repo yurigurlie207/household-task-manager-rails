@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   before_action :require_login
   skip_before_action :require_login, only: [:index, :new, :create]
-    #raise params.inspect/whatever.inspect for debugging
   before_action :set_user!, only: [:show, :edit, :update, :destroy]
+  #raise params.inspect/whatever.inspect for debugging
 
     def index
     end
@@ -29,12 +29,9 @@ class UsersController < ApplicationController
     end
 
     def edit
-      @user = User.find(params[:id])
     end
 
     def update
-      @user = User.find(params[:id])
-
       @user.update(user_params)
 
       if @user.save
@@ -47,11 +44,9 @@ class UsersController < ApplicationController
 
     def destroy
       session.delete :user_id
-      @user = User.find(params[:id])
       @user.destroy
      
-        # flash[:notice] = "Subtask deleted."
-        redirect_to '/'
+      redirect_to '/'
     end
   
 
