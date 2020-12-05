@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  before_action :set_task!, only: [:show, :edit, :update, :destroy]
 
     def index
     end
@@ -17,40 +18,38 @@ class TasksController < ApplicationController
         else
           render 'new'
         end
-
-      end
+    end
   
-      def show
-       @task = Task.find(params[:id])
+    def show
+    end
+
+    def edit
+    end
+ 
+    def update
+      @task.update(task_params)
+
+      if @task.save
+        redirect_to @task
+      else
+        render :edit
       end
-
-      def edit
-        @task = Task.find(params[:id])
-     end
+    end
  
-     def update
-       @task = Task.find(params[:id])
-       @task.update(task_params)
- 
-       if @task.save
-         redirect_to @task
-       else
-         render :edit
-       end
-     end
- 
-
-     def destroy
-       @task = Task.find(params[:id])
-       @task.destroy
-         # flash[:notice] = "Subtask deleted."
-       redirect_to @user
-     end
+    def destroy
+      @task.destroy
+      flash[:notice] = "You have successfully deleted task."
+      redirect_to @user
+    end
    
 
     private
   
     def task_params
       params.require(:task).permit(:title, :deadline, :notes, :subtasks_attributes => {})
+    end
+
+    def set_task!
+      @task = Task.find(params[:id])
     end
 end

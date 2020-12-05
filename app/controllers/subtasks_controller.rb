@@ -1,4 +1,5 @@
 class SubtasksController < ApplicationController
+  before_action :set_subtask!, only: [:show, :edit, :update, :destroy]
   
     def index
     end
@@ -9,7 +10,7 @@ class SubtasksController < ApplicationController
 
     def create
         @subtask = Subtask.create(subtask_params.except(:user_ids))
-      #   binding.pry
+
         if subtask_params[:user_ids].count >= 2
           @subtask.user_ids = subtask_params[:user_ids]
           redirect_to @subtask
@@ -22,15 +23,12 @@ class SubtasksController < ApplicationController
     end
     
     def show
-        @subtask = Subtask.find(params[:id])
     end
 
     def edit
-       @subtask = Subtask.find(params[:id])
     end
 
     def update
-      @subtask = Subtask.find(params[:id])
 
       if subtask_params[:user_ids].count == 1 || !@subtask.update(subtask_params)
          @subtask.errors[:base] << "Need to assign at least one user" 
@@ -42,10 +40,9 @@ class SubtasksController < ApplicationController
 
 
     def destroy
-      @subtask = Subtask.find(params[:id])
       @task = @subtask.task
       @subtask.destroy
-        # flash[:notice] = "Subtask deleted."
+      flash[:notice] = "You have successfully deleted task."
       redirect_to task_path(@task)
     end
   
@@ -54,5 +51,9 @@ class SubtasksController < ApplicationController
   
     def subtask_params
       params.require(:subtask).permit(:title,:complete, :notes, :priority, :estimated_duration, :actual_duration, :task_id, :user_ids => [])
+    end
+
+    def set_subtask!
+      @subtask = Subtask.find(params[:id])
     end
 end
