@@ -130,3 +130,11 @@ Next steps:
  Next:
  blog post, and video walkthrough. Getting any bugs along the way.
  I think it's mostly in good shape.
+
+12/6/20
+blog posted
+
+12/7/20
+Trouble shooting today:
+- can't save users when assigning from nested task/subtask form creation.
+- subtask create button doesn't work from the unnested route.
