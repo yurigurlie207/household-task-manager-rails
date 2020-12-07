@@ -26,7 +26,7 @@ class SessionsController < ApplicationController
     else #auth through app login
 
       @user = User.find_by(username: params[:username]).try(:authenticate, params[:password])
-
+      
       if !params[:username] || params[:username].empty? || !@user
         flash[:notice] = "wrong username and/or password"
         return render :new

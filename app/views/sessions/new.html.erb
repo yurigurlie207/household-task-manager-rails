@@ -6,4 +6,8 @@
     <input name="password" type="text" id="password" placeholder="password">
     <input type="submit" value='login'>
   <% end %>
+  <br><br>
+  <p>
+  <%= link_to "Home", home_url() %> | <%= link_to 'Login with Github', '/auth/github'%> | <%= link_to 'Sign Up', new_user_url() %>
+  </p>
 </div>
