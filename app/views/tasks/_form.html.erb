@@ -29,7 +29,7 @@
     </p>
     
     <% if request.env['PATH_INFO'] =~ /.*new.*/ %>
-        <p>Create at least One Subtask for this task</p>
+        <p><h3>Create at least One Subtask for this task</h3></p>
         
             <%= f.fields_for :subtasks do |subtask_builder| %>
                 

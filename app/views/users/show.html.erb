@@ -19,8 +19,10 @@
 
     <div class = "taskbox">
     <%= button_to "Create New Task", new_task_url(), method: :get %> <br>
-    <%= button_to "Create New Subtask", new_subtask_url(), method: :get %> <br>
-
+    <% if Task.all.count > 0 %>
+        <%= button_to "Create New Subtask", new_subtask_url(), method: :get %> <br>
+    <% end %>
+    
     <h3> You are assigned to the following subtasks: </h3>
             <p>
                 <ul>
