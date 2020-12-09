@@ -138,3 +138,6 @@ blog posted
 Trouble shooting today:
 - can't save users when assigning from nested task/subtask form creation.
 - subtask create button doesn't work from the unnested route.
+
+12/8/20
+- fixed the subtask create button issue
