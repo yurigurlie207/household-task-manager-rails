@@ -141,3 +141,40 @@ Trouble shooting today:
 
 12/8/20
 - fixed the subtask create button issue
+
+12/12/20
+Use the manual nested attributes code to solve the bug.
+
+   <!-- 
+            <%= f.fields_for :subtasks do |subtask_builder| %>
+                <!-- user[addresses_attributes][][street1]
+                     task[subtask_attributes][][title]
+                     -->
+              <p>
+                <%= subtask_builder.label :title %>
+                <%= subtask_builder.text_field :title %>
+              </p>
+
+              <p>
+                <%= subtask_builder.label :estimated_duration%>
+                <%= estimated_select(subtask_builder) %>
+              </p>
+
+              <p>
+                <%= subtask_builder.label :actual_duration%>
+                <%= actual_select(subtask_builder) %>
+                </p>
+
+            <p>
+                <%= subtask_builder.label :priority %>
+                <%= priority_select(subtask_builder) %>
+                </p>
+            
+                <p>
+                <%= subtask_builder.label :notes %>
+                <%= subtask_builder.text_area :notes %>
+                </p>
+
+                <h4>It is recommended you assign one Household Member to Subtask</h4>
+                <%= subtask_builder.collection_check_boxes :user_ids, User.all, :id, :username %>
+          -->
