@@ -11,15 +11,16 @@ class TasksController < ApplicationController
 
     def create
       # binding.pry
-        @task = Task.new(task_params)
-        # @task.subtasks_attributes=(params[:task][:subtasks_attributes])
+        @task = Task.new(task_params.except(:subtasks))
         @task.user_id = session[:user_id]
-
-        if @task.save
-          redirect_to @task
-        else
+        # binding.pry
+        if !@task.save
           render :new
+        else
+          @task.subtask_attributes=(task_params.slice(:subtasks))
+          redirect_to @task
         end
+       
     end
   
     def show
@@ -50,7 +51,7 @@ class TasksController < ApplicationController
     private
   
     def task_params
-      params.require(:task).permit(:title, :deadline, :notes, :subtasks_attributes => [:title, :user_ids => []])
+      params.require(:task).permit(:title, :deadline, :notes, :subtasks=> {})
     end
 
     def set_task!

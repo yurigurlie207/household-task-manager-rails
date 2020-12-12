@@ -8,13 +8,13 @@ class Task < ApplicationRecord
  
     validates :deadline, date: { on_or_after: Proc.new { Time.now } }
 
-    def subtasks_attributes=(subtasks_attributes)
-        subtasks_attributes.each do |i,subtask_attribute|
-            # binding.pry
-            subtask = self.subtasks.build(subtask_attribute.except(:user_ids))
-            subtask.user_ids = subtask_attribute[:user_ids]
-           binding.pry
-        end
+    def subtask_attributes=(subtask_attributes)
+            subtask = self.subtasks.build(title: subtask_attributes[:subtasks][:title])
+            if !subtask.save 
+                redirect_to new_task()
+            else
+                subtask.user_ids = subtask_attributes[:subtasks][:user_ids]
+            end
     end
 
 end
