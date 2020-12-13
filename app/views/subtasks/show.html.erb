@@ -2,6 +2,9 @@
     <h2> <%= @subtask.title %> </h2>
     <h3>&emsp;This subtask is part of: <%= link_to @subtask.task.title, task_path(@subtask.task) %> </h3>
     <h4>&emsp;Status: <%= if @subtask.complete then "complete" else "in progress" end %> </h4>
+    <h4>&emsp;Priority: <%= @subtask.priority %> </h4>
+    <h4>&emsp;Estimated Duration: <%= @subtask.estimated_duration %> </h4>
+    <h4>&emsp;Actual Duration: <%= @subtask.actual_duration %> </h4>
     
     
     <p>
