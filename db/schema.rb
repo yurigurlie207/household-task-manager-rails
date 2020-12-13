@@ -14,8 +14,8 @@ ActiveRecord::Schema.define(version: 2020_11_29_180210) do
 
   create_table "subtasks", force: :cascade do |t|
     t.string "title"
-    t.integer "estimated_duration"
-    t.integer "actual_duration"
+    t.string "estimated_duration"
+    t.string "actual_duration"
     t.string "priority"
     t.text "notes"
     t.boolean "complete"

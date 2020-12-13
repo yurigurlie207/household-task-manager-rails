@@ -28,7 +28,7 @@
     <%= f.text_area :notes %>
     </p>
     
-    <% if request.env['PATH_INFO'] =~ /.*new.*/ %>
+    <% if path = request.env['PATH_INFO'] =~ /.*new.*/ %>
 
         <p><h3>Create at least One Subtask for this task</h3></p>
 
@@ -41,7 +41,7 @@
 
           <p>
           <%= subtask_builder.label :estimated_duration %>
-          <%= estimated_select(subtask_builder) %>
+          <%= estimated_select(subtask_builder, path) %>
           </p>
       
           <p>

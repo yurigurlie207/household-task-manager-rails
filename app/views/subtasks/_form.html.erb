@@ -47,9 +47,9 @@
     <p>Assign at least One Household Member to Subtask</p>
     <%= f.collection_check_boxes :user_ids, User.all, :id, :username %>
     <br />
-
+    <br>
     <% if request.env['PATH_INFO'] =~ /.*edit.*/ %>
-        <%= f.label :complete %>
+        <%= f.label :complete, "Mark Complete: %>
         <%= f.check_box :complete %>
     <% end %>
 

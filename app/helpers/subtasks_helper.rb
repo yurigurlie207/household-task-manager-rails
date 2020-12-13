@@ -1,6 +1,12 @@
 module SubtasksHelper
-    def estimated_select(subtask)
-        select_tag "subtask[estimated_duration]", options_for_select(['5 minutes','15 minutes', '30 minutes', '45 minutes', '60 minutes'], subtask.estimated_duration ? subtask.estimated_duration : '5 minutes')
+    def estimated_select(subtask, path)
+        # binding.pry
+
+        if path =~ /.*new.*/
+            select_tag "subtask[estimated_duration]", options_for_select(['5 minutes','15 minutes', '30 minutes', '45 minutes', '60 minutes'], '5 minutes')
+        else
+            select_tag "subtask[estimated_duration]", options_for_select(['5 minutes','15 minutes', '30 minutes', '45 minutes', '60 minutes'], subtask.estimated_duration ? subtask.estimated_duration : '5 minutes')
+        end
     end
 
     def actual_select(subtask)
