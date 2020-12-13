@@ -6,14 +6,17 @@ class TasksController < ApplicationController
 
     def new
         @task = Task.new
-        @task.subtasks.build()
+        # @task.subtasks
     end
 
     def create
         @task = Task.new(task_params.except(:subtasks))
         @task.user_id = session[:user_id]
        
-        if !@task.save
+        # binding.pry
+        if !@task.save || task_params[:subtasks][:title] == ""
+          # binding.pry
+          flash[:notice] = "Please enter a subtask title."
           render :new
         else
           @task.subtask_attributes=(task_params.slice(:subtasks))
