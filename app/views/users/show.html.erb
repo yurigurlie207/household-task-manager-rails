@@ -23,10 +23,10 @@
         <%= button_to "Create New Subtask", new_subtask_url(), method: :get %> <br>
     <% end %>
     
-    <h3> You are assigned to the following subtasks: </h3>
+    <h3> You are assigned to the following incompleted subtasks: </h3>
             <p>
                 <ul>
-                    <% @usertasks.each do |usertask| %>
+                    <% incomplete_usertasks.each do |usertask| %>
                         <li><%= link_to usertask.subtask.task.title, task_path(usertask.subtask.task) %> - <%= link_to usertask.subtask.title, task_subtask_path(usertask.subtask) %></li>
                     <%end%>
                 <ul>
