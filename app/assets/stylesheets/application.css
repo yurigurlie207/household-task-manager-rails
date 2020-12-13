@@ -20,7 +20,7 @@
     margin: 100px auto;
  }
 
- .field_with_errors
+ .field_with_errors, .notice
  {
      color: red;
  }
@@ -41,3 +41,4 @@
     border: 1px solid;
     border-radius: 20px;
  }
+

@@ -10,14 +10,16 @@ class TasksController < ApplicationController
     end
 
     def create
-      # binding.pry
         @task = Task.new(task_params.except(:subtasks))
         @task.user_id = session[:user_id]
-        # binding.pry
+       
         if !@task.save
           render :new
         else
           @task.subtask_attributes=(task_params.slice(:subtasks))
+          if !@task.subtasks.first.id 
+            flash[:notice] = "You were not able to save a subtask, please add subtasks."
+          end
           redirect_to @task
         end
        

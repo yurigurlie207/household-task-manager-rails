@@ -1,5 +1,6 @@
 
 <div class= "taskshow">
+ <p class="notice"><%= flash[:notice] %></p>
     <h3> <%= @task.title %><h3>
     <h4>&emsp;This task was created by: <%= User.find_by(id: @task.user_id).username %></h4>
 

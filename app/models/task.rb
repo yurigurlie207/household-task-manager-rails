@@ -10,11 +10,8 @@ class Task < ApplicationRecord
 
     def subtask_attributes=(subtask_attributes)
             subtask = self.subtasks.build(title: subtask_attributes[:subtasks][:title])
-            if !subtask.save 
-                redirect_to new_task()
-            else
-                subtask.user_ids = subtask_attributes[:subtasks][:user_ids]
-            end
+            subtask.save 
+            subtask.user_ids = subtask_attributes[:subtasks][:user_ids] 
     end
 
 end
