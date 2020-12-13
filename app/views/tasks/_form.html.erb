@@ -38,16 +38,28 @@
             <%= subtask_builder.label :title %>
             <%= subtask_builder.text_field :title %>
           </p>
+
+          <p>
+          <%= subtask_builder.label :estimated_duration %>
+          <%= estimated_select(subtask_builder) %>
+          </p>
+      
+          <p>
+          <%= subtask_builder.label :actual_duration%>
+          <%= actual_select(subtask_builder) %>
+          </p>
+      
+          <p>
+          <%= subtask_builder.label :priority %>
+          <%= priority_select(subtask_builder) %>
+          </p>
+
           <p>
             <%= subtask_builder.label :user_ids, "Users" %><br>
             <%= subtask_builder.collection_check_boxes :user_ids, User.all, :id, :username %>
           </p>
           </fieldset>
 
-          <!--
-          <label> Subtask Title: </label>
-          <input type = "text" name="task[subtask_attributes][][title]">
-          -->
         <% end %>
 
 
