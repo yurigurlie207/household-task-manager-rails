@@ -145,36 +145,7 @@ Trouble shooting today:
 12/12/20
 Use the manual nested attributes code to solve the bug.
 
-   <!-- 
-            <%= f.fields_for :subtasks do |subtask_builder| %>
-                <!-- user[addresses_attributes][][street1]
-                     task[subtask_attributes][][title]
-                     -->
-              <p>
-                <%= subtask_builder.label :title %>
-                <%= subtask_builder.text_field :title %>
-              </p>
-
-              <p>
-                <%= subtask_builder.label :estimated_duration%>
-                <%= estimated_select(subtask_builder) %>
-              </p>
-
-              <p>
-                <%= subtask_builder.label :actual_duration%>
-                <%= actual_select(subtask_builder) %>
-                </p>
-
-            <p>
-                <%= subtask_builder.label :priority %>
-                <%= priority_select(subtask_builder) %>
-                </p>
-            
-                <p>
-                <%= subtask_builder.label :notes %>
-                <%= subtask_builder.text_area :notes %>
-                </p>
-
-                <h4>It is recommended you assign one Household Member to Subtask</h4>
-                <%= subtask_builder.collection_check_boxes :user_ids, User.all, :id, :username %>
-          -->
+12/13/20
+Spent the better part of yesterday fixing the nested form attributes of task/subtask creation.
+Added in Scope to usertask - since it was a project requirement. 
+Today, tackling all the bugs that are coming up as I try to do a walkthrough of the whole tool. Recorded a debugging session.
