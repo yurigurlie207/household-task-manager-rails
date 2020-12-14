@@ -9,10 +9,11 @@ class SubtasksController < ApplicationController
     end
 
     def create
-        @subtask = Subtask.create(subtask_params)
+        @subtask = Subtask.create(subtask_params.except(:user_ids))
   
         if @subtask.save
-        redirect_to @subtask
+         @subtask.user_ids = subtask_params.slice(:user_ids).delete("")
+         redirect_to @subtask
       else
         render :new
       end

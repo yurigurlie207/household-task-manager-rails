@@ -149,3 +149,7 @@ Use the manual nested attributes code to solve the bug.
 Spent the better part of yesterday fixing the nested form attributes of task/subtask creation.
 Added in Scope to usertask - since it was a project requirement. 
 Today, tackling all the bugs that are coming up as I try to do a walkthrough of the whole tool. Recorded a debugging session.
+
+12/14/20
+Debugged a bit more. 
+Record video.
