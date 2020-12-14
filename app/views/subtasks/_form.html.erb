@@ -1,37 +1,38 @@
 
 <%= form_for @subtask  do |f| %>
     <% if @subtask.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-      <%= pluralize(@subtask.errors.count, "error") %>
-      prohibited this post from being saved:
-    </h2>
-      <ul>
-        <% @subtask.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <p>
+      <div id="error_explanation">
+        <h2>
+        <%= pluralize(@subtask.errors.count, "error") %>
+        prohibited this post from being saved:
+      </h2>
+        <ul>
+          <% @subtask.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+   
+   <% @path = request.env['PATH_INFO'] %>
+   <p>
     <%= f.label :title %>
     <%= f.text_field :title %>
     </p>
 
     <p>
     <%= f.label :estimated_duration %>
-    <%= estimated_select(@subtask) %>
+    <%= estimated_select(@subtask, @path) %>
     </p>
 
     <p>
-    <%= f.label :actual_duration%>
-    <%= actual_select(@subtask) %>
+    <%= f.label :actual_duration %>
+    <%= actual_select(@subtask, @path) %>
     </p>
 
     <p>
     <%= f.label :priority %>
-    <%= priority_select(@subtask) %>
+    <%= priority_select(@subtask, @path) %>
     </p>
 
     <p>
@@ -39,7 +40,6 @@
     <%= f.text_area :notes %>
     </p>
 
-    <% @path = request.env['PATH_INFO'] %>
     <%= f.label :task_title %>
     <%= task_select(@subtask, @path) %><br>
     <br />
@@ -49,7 +49,7 @@
     <br />
     <br>
     <% if request.env['PATH_INFO'] =~ /.*edit.*/ %>
-        <%= f.label :complete, "Mark Complete: %>
+        <%= f.label :complete, "Mark Complete:" %>
         <%= f.check_box :complete %>
     <% end %>
 
