@@ -12,7 +12,7 @@ class SubtasksController < ApplicationController
         @subtask = Subtask.create(subtask_params.except(:user_ids))
   
         if @subtask.save
-         @subtask.user_ids = subtask_params.slice(:user_ids).delete("")
+         @subtask.user_ids = subtask_params[:user_ids]
          redirect_to @subtask
       else
         render :new
