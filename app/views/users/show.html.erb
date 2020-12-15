@@ -26,6 +26,7 @@
     <h3> You are assigned to the following incompleted subtasks: </h3>
             <p>
                 <ul>
+                <% binding.pry %>
                     <% incomplete_usertasks.each do |usertask| %>
                         <li><%= link_to usertask.subtask.task.title, task_path(usertask.subtask.task) %> - <%= link_to usertask.subtask.title, task_subtask_path(usertask.subtask) %></li>
                     <%end%>

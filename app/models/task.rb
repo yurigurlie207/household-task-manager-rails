@@ -10,6 +10,7 @@ class Task < ApplicationRecord
 
     def subtask_attributes=(subtask_attributes)
             subtask = self.subtasks.build(title: subtask_attributes[:subtasks][:title])
+            subtask.complete = false
             subtask.save 
             subtask.user_ids = subtask_attributes[:subtasks][:user_ids] 
     end
