@@ -152,4 +152,7 @@ Today, tackling all the bugs that are coming up as I try to do a walkthrough of 
 
 12/14/20
 Debugged a bit more. 
-Record video.
+Two bugs I'm working on at end of day need to finish:
+- usertask filter wonky
+- make sure users display correctly through nested view
+Might not get to record final video until later this week since a lot of bugs are coming up as I'm doing my walkthrough

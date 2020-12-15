@@ -13,9 +13,9 @@ class TasksController < ApplicationController
         @task = Task.new(task_params.except(:subtasks))
         @task.user_id = session[:user_id]
        
-        # binding.pry
+       
         if !@task.save || task_params[:subtasks][:title] == ""
-          # binding.pry
+       
           flash[:notice] = "Please enter a subtask title."
           render :new
         else
