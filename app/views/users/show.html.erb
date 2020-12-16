@@ -26,11 +26,11 @@
     <h3> You are assigned to the following incompleted subtasks: </h3>
             <p>
                 <ul>
-                <% if incomplete_usertasks != [[]] %>
                     <% incomplete_usertasks.each do |usertask| %>
+                        <% if usertask != [] %>
                         <li><%= link_to usertask[0].subtask.task.title, task_path(usertask[0].subtask.task) %> - <%= link_to usertask[0].subtask.title, subtask_path(usertask[0].subtask) %></li>
+                        <%end%>
                     <%end%>
-                <%end%>
                 <ul>
             </p>
     </div>
