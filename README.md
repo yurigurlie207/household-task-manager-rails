@@ -157,3 +157,6 @@ Two bugs I'm working on at end of day need to finish:
 - make sure users display correctly through nested view
 Might not get to record final video until later this week since a lot of bugs are coming up as I'm doing my walkthrough
 
+12/15/20
+Fixed final bug (I hope)
+Do video walkthrough
