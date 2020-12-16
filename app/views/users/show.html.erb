@@ -26,8 +26,8 @@
     <h3> You are assigned to the following incompleted subtasks: </h3>
             <p>
                 <ul>
-                    <% incomplete_usertasks.first.each do |usertask| %>
-                        <li><%= link_to usertask.subtask.task.title, task_path(usertask.subtask.task) %> - <%= link_to usertask.subtask.title, subtask_path(usertask.subtask) %></li>
+                    <% incomplete_usertasks.each do |usertask| %>
+                        <li><%= link_to usertask[0].subtask.task.title, task_path(usertask[0].subtask.task) %> - <%= link_to usertask[0].subtask.title, subtask_path(usertask[0].subtask) %></li>
                     <%end%>
                 <ul>
             </p>
