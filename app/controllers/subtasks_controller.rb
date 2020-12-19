@@ -9,13 +9,15 @@ class SubtasksController < ApplicationController
     end
 
     def create
-        @subtask = Subtask.create(subtask_params.except(:user_ids))
+        @subtask = Subtask.new(subtask_params) #.except(:user_ids)
         @subtask.complete = false
         
         if @subtask.save
-         @subtask.user_ids = subtask_params[:user_ids]
+          binding.pry
+        #  @subtask.user_ids = subtask_params[:user_ids]
          redirect_to @subtask
       else
+        binding.pry
         render :new
       end
     end

@@ -20,22 +20,19 @@ class SessionsController < ApplicationController
           return redirect_to new_user_path() 
         end
       end
-
-      session[:user_id] = @user.id
       
     else #auth through app login
 
       @user = User.find_by(username: params[:username]).try(:authenticate, params[:password])
       
-      if !params[:username] || params[:username].empty? || !@user
+      if !@user
         flash[:notice] = "wrong username and/or password"
         return render :new
-      else
-        session[:user_id] = @user.id
       end
 
     end
 
+    session[:user_id] = @user.id
     redirect_to @user
   end
 
