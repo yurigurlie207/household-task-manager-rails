@@ -7,3 +7,8 @@ class CreateUserTasks < ActiveRecord::Migration[6.0]
     end
   end
 end
+
+# t.timestamps null: false is short-hand form of
+
+#   t.column :created_at,  :datetime
+#   t.column :updated_at,  :datetime

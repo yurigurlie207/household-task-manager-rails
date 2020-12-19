@@ -6,7 +6,7 @@ class CreateSubtasks < ActiveRecord::Migration[6.0]
       t.string :actual_duration
       t.string :priority
       t.text :notes
-      t.boolean :complete
+      t.boolean :complete, :default => false
       t.timestamps null: false
     end
   end
