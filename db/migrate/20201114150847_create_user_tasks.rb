@@ -12,3 +12,5 @@ end
 
 #   t.column :created_at,  :datetime
 #   t.column :updated_at,  :datetime
+
+# https://apidock.com/ruby/DateTime/strftime

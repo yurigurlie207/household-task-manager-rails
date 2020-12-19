@@ -28,7 +28,9 @@
                 <ul>
                     <% incomplete_usertasks.each do |usertask| %>
                         <% if usertask != [] %>
-                        <li><%= link_to usertask[0].subtask.task.title, task_path(usertask[0].subtask.task) %> - <%= link_to usertask[0].subtask.title, subtask_path(usertask[0].subtask) %></li>
+                        <li><%= link_to usertask[0].subtask.task.title, task_path(usertask[0].subtask.task) %> - <%= link_to usertask[0].subtask.title, subtask_path(usertask[0].subtask) %>
+                        ::: assigned on: <%= usertask[0].created_at.strftime(" %b %d %Y") %>
+                        </li>
                         <%end%>
                     <%end%>
                 <ul>
