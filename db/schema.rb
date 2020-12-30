@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2020_11_29_180210) do
     t.string "actual_duration"
     t.string "priority"
     t.text "notes"
-    t.boolean "complete"
+    t.boolean "complete", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "task_id"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2020_11_29_180210) do
   create_table "user_tasks", force: :cascade do |t|
     t.integer "user_id"
     t.integer "subtask_id"
+    t.text "comment"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["subtask_id"], name: "index_user_tasks_on_subtask_id"
