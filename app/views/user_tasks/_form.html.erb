@@ -1,6 +1,6 @@
 
 <%= form_for @usertask  do |f| %>
-    <% if @subtask.errors.any? %>
+    <% if @usertask.errors.any? %>
       <div id="error_explanation">
         <h2>
         <%= pluralize(@usertask.errors.count, "error") %>

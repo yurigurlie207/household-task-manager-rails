@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   resources :subtasks
 
- 
+  resources :user_tasks
 end
 
 

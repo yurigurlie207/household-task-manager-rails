@@ -1,4 +1,5 @@
 class UserTasksController < ApplicationController
+    before_action :set_usertask!, only: [:edit, :update]
   
     def index
         @usertasks = UserTask.all
@@ -8,7 +9,6 @@ class UserTasksController < ApplicationController
     end
 
     def update
-        @usertask = UserTask.find(params[:id])
         @usertask.update(usertask_params)
 
       if @usertask.save
@@ -22,7 +22,11 @@ class UserTasksController < ApplicationController
     private 
 
     def usertask_params
-        params.require(:usertask).permit(:comment)
+        params.require(:user_task).permit(:comment)
     end  
+
+    def set_usertask!
+        @usertask = UserTask.find(params[:id])
+      end
  
 end
